@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['Product']">All</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['shoes']">Shoes</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['shirts']">T-shirts</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link"  [routerLink]="['pants']">Pants</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" [routerLink]="['accessories']">Accessories</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </div>
+</nav>
+
+<section class="schedule-section spad pt-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="section-title">
+                  <h2>Products</h2>
+                  <p>Shop Smart, Live Better</p>
+              </div>
+              <div class="row">
+                  <div class="col-md-4 mb-4">
+                      <div class="card">
+                          <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
+                          <div class="card-body">
+                              <h5 class="card-title btn"><b>Name</b></h5>
+                              <a class="price">$140</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                      <div class="card">
+                          <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
+                          <div class="card-body">
+                              <h5 class="card-title btn"><b>Name</b></h5>
+                              <a class="price">$140</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title btn"><b>Name</b></h5>
+                            <a class="price">$140</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div class="card">
+                      <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
+                      <div class="card-body">
+                          <h5 class="card-title btn"><b>Name</b></h5>
+                          <a class="price">$140</a>
+                      </div>
+                  </div>
+              </div>
+
+                  <div class="col-md-4 mb-4">
+                      <div class="card">
+                          <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
+                          <div class="card-body">
+                              <h5 class="card-title btn"><b>Name</b></h5>
+                              <a class="price">$140</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="sidebar">
+                  <h3>Products By __</h3>
+                  <div class="card">
+                      <!-- <img class="card-img-top" style="height: 100px !important;" src={{item.imageUrl}} alt="Card image cap"> -->
+                      <div class="card-body"> 
+                          <h5>Name</h5>
+                          <a class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<router-outlet></router-outlet>

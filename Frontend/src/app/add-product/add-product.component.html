@@ -1,0 +1,15 @@
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="Name" name="Name" required [(ngModel)]="formData.name">
+  
+    <label for="unitPrice">Unit Price:</label>
+    <input type="number" id="UnitPrice" name="UnitPrice" required [(ngModel)]="formData.unitPrice">
+  
+    <label for="stockQuantity">Stock Quantity:</label>
+    <input type="number" id="StockQuantity" name="StockQuantity" required [(ngModel)]="formData.stockQuantity">
+  
+    <label for="description">Description:</label>
+    <textarea id="Description" name="Description" required [(ngModel)]="formData.description"></textarea>
+  
+    <button type="button" (click)="onSubmit(formData.value)">Send</button>
+  </form>

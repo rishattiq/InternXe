@@ -1,0 +1,49 @@
+.row{
+    margin-top: 5%;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    
+
+}
+
+.card-body {
+    padding: 20px;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-80%);
+    width: 80%;
+    background: rgba(179, 176, 176, 0.8);
+    border-radius: 0 10px 10px 0;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-title:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.price {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+
+
