@@ -35,19 +35,19 @@ namespace ECommerceApp.Controllers
         }
 
         // Product Page APIs
-        [HttpGet("category/{category}")]
+        [HttpGet("getproductbycategory/{category}")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(string category)
         {
             return Ok(await _productService.GetProductsByCategory(category));
         }
 
-        [HttpGet]
+        [HttpGet("getallproducts")]
         public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
         {
             return Ok(await _productService.GetAllProducts());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("getproductbyid/{id}")]
         public async Task<ActionResult<Product>> GetProductById(int id)
         {
             var product = await _productService.GetProductById(id);
@@ -60,14 +60,14 @@ namespace ECommerceApp.Controllers
         }
 
         // Admin CRUD Operations
-        [HttpPost]
+        [HttpPost("addproduct")]
         public async Task<ActionResult> AddProduct([FromBody] Product product)
         {
             await _productService.AddProduct(product);
             return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("updateproductbyid/{id}")]
         public async Task<ActionResult> UpdateProduct(int id, [FromBody] Product product)
         {
             if (id != product.Id)
@@ -79,7 +79,7 @@ namespace ECommerceApp.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("deleteproductbyid/{id}")]
         public async Task<ActionResult> DeleteProduct(int id)
         {
             await _productService.DeleteProduct(id);
@@ -87,7 +87,7 @@ namespace ECommerceApp.Controllers
         }
 
         // Search Bar API
-        [HttpGet("search/{name}")]
+        [HttpGet("searchbyname/{name}")]
         public async Task<ActionResult<Product>> GetProductByName(string name)
         {
             var product = await _productService.GetProductByName(name);

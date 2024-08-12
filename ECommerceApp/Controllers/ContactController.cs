@@ -15,7 +15,14 @@ namespace ECommerceApp.Controllers
             _contactService = contactService;
         }
 
-        [HttpPost]
+        [HttpGet("getcontactmessages")]
+
+        public async Task<ActionResult<IEnumerable<ContactMessage>>> GetAllMessages()
+        {
+            return Ok(await _contactService.GetAllMessages());
+        }
+
+        [HttpPost("addcontact")]
         public async Task<ActionResult> SubmitContactMessage([FromBody] ContactMessage message)
         {
             await _contactService.AddContactMessage(message);
