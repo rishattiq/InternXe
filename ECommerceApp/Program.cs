@@ -25,6 +25,7 @@ builder.Services.AddDbContext<ECommerceContext>(options =>
 
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<ContactService>();
+builder.Services.AddScoped<CustomerService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

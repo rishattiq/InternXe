@@ -4560,11 +4560,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj",
+      "projectUniqueName": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj",
       "projectName": "ECommerceApp",
-      "projectPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj",
+      "projectPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj",
       "packagesPath": "C:\\Users\\PMYLS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\obj\\",
+      "outputPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\PMYLS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4641,13 +4641,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }
