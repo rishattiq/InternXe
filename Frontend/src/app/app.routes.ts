@@ -115,6 +115,10 @@ export const routes: Routes = [
         {
           path: 'Customers',
           loadComponent: () => import('./admin-dashboard/customers/customers.component').then(m => m.CustomersComponent)
+        },
+        {
+          path: 'Notifications',
+          loadComponent: () => import('./admin-dashboard/notifications/notifications.component').then(m => m.NotificationsComponent)
         }
       ]
     },
@@ -128,5 +132,6 @@ export const routes: Routes = [
     path: 'ProuctsList',
     component: ProductsListComponent
   }
+
   
 ];
