@@ -9,6 +9,10 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { TshirtsComponent } from './product/tshirts/tshirts.component';
+import { ProductformComponent } from './productform/productform.component';
 
 
  
@@ -16,12 +20,7 @@ import { AddProductComponent } from './add-product/add-product.component';
 
 export const routes: Routes = [
 
-  { 
-    path: '', 
-    component: LogInPageComponent
   
-  },
-
   {
     path: 'app-register',
     component: RegisterComponent,
@@ -107,5 +106,15 @@ export const routes: Routes = [
     {
         path: 'Contact',
         component: ContactComponent
-    }
+    },
+    {
+      path: 'AdminDashboard',
+      component: AdminDashboardComponent
+    },
+
+  {
+    path: 'ProuctsList',
+    component: ProductsListComponent
+  }
+  
 ];
