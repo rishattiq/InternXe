@@ -11,15 +11,15 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { AddProductComponent } from './add-product/add-product.component';
 
 
- 
+
 
 
 export const routes: Routes = [
 
-  { 
-    path: '', 
+  {
+    path: '',
     component: LogInPageComponent
-  
+
   },
 
   {
@@ -31,7 +31,7 @@ export const routes: Routes = [
     path: 'app-dashboard',
     component: DashboardComponent,
   },
-  
+
     {
         path: '',
         pathMatch: 'full',
@@ -73,8 +73,8 @@ export const routes: Routes = [
             loadComponent: () => import('./product/shoes/shoes.component').then(m => m.ShoesComponent)
           }
         ]
-         
-    
+
+
     },
 
     {
