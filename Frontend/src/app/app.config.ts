@@ -7,6 +7,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
+
 import { routes } from './app.routes';
 
 // const firebaseConfig = {
@@ -19,6 +20,6 @@ import { routes } from './app.routes';
 // };
 
 export const appConfig: ApplicationConfig = {
-  providers: [ NgxChartsModule, ReactiveFormsModule,provideHttpClient(), provideRouter(routes), provideClientHydration()],
+  providers: [NgxChartsModule, ReactiveFormsModule,provideHttpClient(), provideRouter(routes), provideClientHydration()],
 
 };

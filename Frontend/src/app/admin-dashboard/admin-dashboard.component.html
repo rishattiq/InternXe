@@ -1,4 +1,4 @@
-<!-- <div class="page">
+<div class="page">
     <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
     <div class="sidebar">
         <div class="logo">
@@ -8,10 +8,9 @@
             <li >Dashboard</li>
             <li>Products</li>
             <li>Sales</li>
-            <li >Customers</li>
-            <li >Analytics</li>
+            <li [routerLink]="['Customers']" >Customers</li>
             <li >Notifications</li>
-            <li>Settings</li>
+            
         </ul>
     </div>
 
@@ -44,8 +43,10 @@
             <div class="percentage">+18%</div>
         </div>
     </div>
-</div> -->
+</div>
+<router-outlet></router-outlet>
 
+<!-- 
 <div class="dashboard">
     <div class="dashboard-cards">
       <div class="card">
@@ -67,7 +68,7 @@
     </div>
     
     <div class="dashboard-charts">
-      <!-- Add your charts here -->
+      
       <div class="chart">
         <canvas baseChart 
                 [datasets]="salesData"
@@ -85,4 +86,4 @@
       </div>
     </div>
   </div>
-  
+   -->

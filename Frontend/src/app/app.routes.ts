@@ -13,6 +13,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ProductsListComponent } from './products-list/products-list.component';
 import { TshirtsComponent } from './product/tshirts/tshirts.component';
 import { ProductformComponent } from './productform/productform.component';
+import { CustomersComponent } from './admin-dashboard/customers/customers.component';
 
 
  
@@ -34,7 +35,7 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        component:RegisterComponent
+        component:HomeComponent
     },
     {
       path: 'hero',
@@ -109,7 +110,18 @@ export const routes: Routes = [
     },
     {
       path: 'AdminDashboard',
-      component: AdminDashboardComponent
+      component: AdminDashboardComponent,
+      children:[
+        {
+          path: 'Customers',
+          loadComponent: () => import('./admin-dashboard/customers/customers.component').then(m => m.CustomersComponent)
+        }
+      ]
+    },
+
+    {
+      path: 'Customers',
+      component: CustomersComponent
     },
 
   {
