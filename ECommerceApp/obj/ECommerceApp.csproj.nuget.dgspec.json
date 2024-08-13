@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj": {}
+    "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj": {
+    "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj",
+        "projectUniqueName": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj",
         "projectName": "ECommerceApp",
-        "projectPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\ECommerceApp.csproj",
+        "projectPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\ECommerceApp.csproj",
         "packagesPath": "C:\\Users\\PMYLS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceApp\\obj\\",
+        "outputPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\ECommerceapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PMYLS\\AppData\\Roaming\\NuGet\\NuGet.Config",

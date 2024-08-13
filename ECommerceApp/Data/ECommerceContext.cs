@@ -9,5 +9,7 @@ namespace ECommerceApp.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+
     }
 }
