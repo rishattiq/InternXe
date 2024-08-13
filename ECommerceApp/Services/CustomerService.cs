@@ -12,10 +12,16 @@ namespace ECommerceApp.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Customer>> GetAllProducts()
+        public async Task<IEnumerable<Customer>> GetAllCustomers()
         {
             return await _context.Customers.ToListAsync();
         }
+
+        public async Task<Customer> GetCustomerById(int id)
+        {
+            return await _context.Customers.FindAsync(id);
+        }
+
         public async Task DeleteCustomer(int id)
         {
             var customer = await _context.Customers.FindAsync(id);
