@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+</head>
+<body>
+    <div class="invoice-container">
+        <header class="invoice-header">
+            <div class="company-details">
+                <h1>InternXe</h1>
+                <p>Islamabad, Pakistan</p>
+                <p>Email: InternXe&#64;gmail.com</p>
+                <p>Phone: +0987654312</p>
+            </div>
+            <div class="invoice-details">
+                <h2>Invoice</h2>
+                <p>Invoice Number: #INV-0001</p>
+                <p>Date: August 16, 2024</p>
+            </div>
+        </header>
+
+        <section class="billing-shipping">
+            <div class="billing-address">
+                <h3>Billing Address</h3>
+                <p>John Doe</p>
+                <p>5678 Billing Street</p>
+                <p>City, Country</p>
+            </div>
+            <div class="shipping-address">
+                <h3>Shipping Address</h3>
+                <p>John Doe</p>
+                <p>5678 Shipping Street</p>
+                <p>City, Country</p>
+            </div>
+        </section>
+
+        <section class="invoice-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>A brief description of Product 1</td>
+                        <td>2</td>
+                        <td>$50.00</td>
+                        <td>$100.00</td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>A brief description of Product 2</td>
+                        <td>1</td>
+                        <td>$30.00</td>
+                        <td>$30.00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="total-label">Subtotal</td>
+                        <td>$130.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="total-label">Tax (10%)</td>
+                        <td>$13.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="total-label">Total</td>
+                        <td>$143.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="invoice-notes">
+            <p>Thank you for your purchase! Please make the payment by the due date.</p>
+        </section>
+
+        <footer class="invoice-footer">
+            <p>© 2024 InternXe. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
