@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Feedback Review</title>
-    
-</head>
+
 <body>
     <div class="container">
         <header class="header">
@@ -25,33 +18,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>user1</td>
-                        <td>user1&#64;gmail.com</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-                        <td>2024-08-13</td>
-                        
+
+                    <tr *ngFor="let item of userlist; let index = index">
+                        <th scope="row">{{ index + 1 }}</th>
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>{{ item.password }}</td>
+                        <td>{{ item.username }}</td>  
                         <td>
                             <button class="btn btn-danger btn-sm">Delete</button>
                         </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>user2</td>
-                        <td>user2&#64;gmail.com</td>
-                        <td>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</td>
-                        <td>2024-08-12</td>
-                       
-                        <td>
-                            
-                            <button class="btn btn-danger btn-sm" onclick="onDelete(2)">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- More feedback rows as needed -->
+                        
+                </tr>
+                
                 </tbody>
             </table>
         </div>
     </div>
 </body>
-</html>
+

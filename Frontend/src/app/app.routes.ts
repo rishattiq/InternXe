@@ -15,7 +15,7 @@ import { TshirtsComponent } from './product/tshirts/tshirts.component';
 import { ProductformComponent } from './productform/productform.component';
 import { CustomersComponent } from './admin-dashboard/customers/customers.component';
 import { InvoiceComponent } from './invoice/invoice.component';
-
+import { CheckoutComponent } from './checkout/checkout.component';
 
  
 
@@ -141,6 +141,11 @@ export const routes: Routes = [
   {
     path: 'Invoice',
     component: InvoiceComponent
+  },
+
+  {
+    path: 'Checkout',
+    component: CheckoutComponent 
   }
 
   

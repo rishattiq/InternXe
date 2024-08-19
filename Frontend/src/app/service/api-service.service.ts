@@ -15,6 +15,11 @@ export class APIService {
     return this.http.get("https://jsonplaceholder.typicode.com/users")
   }
 
+  
+  get_orders(){
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
+  }
+
   createUser(obj:any){
     return this.http.post("https://jsonplaceholder.typicode.com/users", obj);
   }
