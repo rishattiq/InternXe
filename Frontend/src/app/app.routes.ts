@@ -1,31 +1,27 @@
 import { Routes } from '@angular/router';
-import { Component } from '@angular/core';
-import { RegisterComponent } from './register/register.component';
-import { LogInPageComponent } from './log-in-page/log-in-page.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
-import { AddProductComponent } from './add-product/add-product.component';
 
-
- 
-
+import { RegisterLoginComponent } from './register-login/register-login.component';
+import { TshirtsComponent } from './product/tshirts/tshirts.component';
+import { ProductTableComponent } from './admin-crud/admin-crud.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { LogInPageComponent } from './log-in-page/log-in-page.component';
 
 export const routes: Routes = [
 
   { 
     path: '', 
-    component: LogInPageComponent
+    component: ProductAddComponent
   
   },
 
-  {
-    path: 'app-register',
-    component: RegisterComponent,
-  },
+
 
   {
     path: 'app-dashboard',
@@ -33,19 +29,8 @@ export const routes: Routes = [
   },
   
     {
-        path: '',
-        pathMatch: 'full',
-        component:RegisterComponent
-    },
-    {
       path: 'hero',
       component:HeroSectionComponent
-    },
-
-    {
-
-      path: 'Register',
-      component: RegisterComponent
     },
 
     {
@@ -53,8 +38,9 @@ export const routes: Routes = [
         component: HomeComponent
     },
     {
-        path: 'Product',
+        path: 'Home/Product',
         component: ProductComponent,
+  
         children:[
           {
             path: 'shirts',
@@ -76,23 +62,27 @@ export const routes: Routes = [
          
     
     },
+    // {
+    //   path: 'Home/Product/shirts',
+    //   component: TshirtsComponent,
+    // },
 
-    {
-      path: 'shirts',
-      loadComponent: () => import('./product/tshirts/tshirts.component').then(m => m.TshirtsComponent)
-    },
-    {
-      path: 'pants',
-      loadComponent: () => import('./product/pants/pants.component').then(m => m.PantsComponent)
-    },
-    {
-      path: 'accessories',
-      loadComponent: () => import('./product/accessories/accessories.component').then(m => m.AccessoriesComponent)
-    },
-    {
-      path: 'shoes',
-      loadComponent: () => import('./product/shoes/shoes.component').then(m => m.ShoesComponent)
-    },
+    // {
+    //   path: 'shirts',
+    //   loadComponent: () => import('./product/tshirts/tshirts.component').then(m => m.TshirtsComponent)
+    // },
+    // {
+    //   path: 'pants',
+    //   loadComponent: () => import('./product/pants/pants.component').then(m => m.PantsComponent)
+    // },
+    // {
+    //   path: 'accessories',
+    //   loadComponent: () => import('./product/accessories/accessories.component').then(m => m.AccessoriesComponent)
+    // },
+    // {
+    //   path: 'shoes',
+    //   loadComponent: () => import('./product/shoes/shoes.component').then(m => m.ShoesComponent)
+    // },
 
     {
         path: 'About',

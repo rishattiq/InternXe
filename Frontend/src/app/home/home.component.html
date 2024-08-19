@@ -1,3 +1,79 @@
+
+<nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="/">
+  
+      InternXe
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarTogglerDemo02"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <h1>asd</h1>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['Home']">Home </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['About']">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                [routerLink]="['Product']">Products</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="['Product']">All</a></li>
+                <li><a class="dropdown-item" [routerLink]="['shoes']">Shoes</a></li>
+                <li><a class="dropdown-item" [routerLink]="['pants']">Pants</a></li>
+                <li><a class="dropdown-item" [routerLink]="['shirts']">T-shirts</a></li>
+                <li><a class="dropdown-item" [routerLink]="['accessories']">Accessories</a></li>
+              </ul>
+            </li>
+             
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['Contact']">Contact</a>
+              </li>
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+  <div class="row">
+  <div class="section">
+    <div class="left-section">
+      <img src="https://fashiongtonpost.com/wp-content/uploads/2024/01/modeltips_m.webp" alt="Fashion Model" class="model-image">
+      <div class="latest-trends">LATEST <br> TRENDS</div>
+    </div>
+    <div class="mid-section">
+      <div class="style-section">
+        <h1>UNBEATABLE STYLE</h1>
+        <p>Upgrade your wardrobe, elevate your confidence, and make every outfit count.</p>
+        <a [routerLink]="['Product']" class="shop-now">SHOP NOW!</a>
+        
+       </div>
+    </div>
+    <div class="right-section">
+      <div class="grid">
+        <div class="grid-item">
+          <img src="https://nextluxury.com/wp-content/uploads/Top-15-Fashion-Accessories-For-Men-1.jpg" alt="Bag">
+        </div>
+        <div class="grid-item">
+          <img src="https://img.freepik.com/premium-photo/womens-fashion-shoesbright-colored-womens-shoes-solid-background_387864-601.jpg" alt="Shoes">
+        </div>
+        <div class="grid-item">
+          <img src="https://img.etimg.com/thumb/width-1600,height-900,imgsize-32090,resizemode-75,msid-102082893/top-trending-products/lifestyle/branded-sports-shoes-for-men-in-india-from-nike-to-puma.jpg" alt="Sports Shoes">
+        </div>
+        <div class="grid-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMNft_0klqDG7i02oILMYPPVT0oTkjhtu_Jjjd6XSfnVvrhfmZ-CbxF-SVa2a2LxZgcs&usqp=CAU" alt="Jewelry">
+          <div class="timeless-elegance">TIMELESS<br>ELEGANCE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
