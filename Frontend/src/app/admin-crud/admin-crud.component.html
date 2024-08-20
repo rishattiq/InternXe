@@ -1,0 +1,37 @@
+<h2 class="mb-4">Product List</h2>
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Rating</th>
+      <th>Comments</th>
+      <th>Category</th>
+      <th>Sale</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price.toFixed(2) }}</td>
+      <td>{{ product.description }}</td>
+      <td><img [src]="product.imageUrl" alt="{{ product.name }}" class="img-thumbnail" style="max-width: 100px;"></td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.rating }}</td>
+      <td>{{ product.comments }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.sale ? 'Yes' : 'No' }}</td>
+      <td>{{ product.createdAt | date }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

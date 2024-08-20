@@ -1,5 +1,5 @@
-
-<!-- <nav class="navbar navbar-expand-lg ">
+<!-- 
+<nav class="navbar navbar-expand-lg ">
     <a class="navbar-brand" href="/">
   
       InternXe
@@ -8,7 +8,7 @@
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+  <h1>asd</h1>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item">
@@ -18,7 +18,8 @@
                   <a class="nav-link" [routerLink]="['About']">About</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Products</a>
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                [routerLink]="['Product']">Products</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" [routerLink]="['Product']">All</a></li>
                 <li><a class="dropdown-item" [routerLink]="['shoes']">Shoes</a></li>
@@ -49,9 +50,9 @@
       <div class="style-section">
         <h1>UNBEATABLE STYLE</h1>
         <p>Upgrade your wardrobe, elevate your confidence, and make every outfit count.</p>
-         <a [routerLink]="['Product']" class="shop-now">SHOP NOW!</a> 
+        <a [routerLink]="['Product']" class="shop-now">SHOP NOW!</a>
         
-      </div>
+       </div>
     </div>
     <div class="right-section">
       <div class="grid">
@@ -72,8 +73,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -102,4 +101,6 @@
     </div>
 </div>
 
+
+<router-outlet></router-outlet>
 
