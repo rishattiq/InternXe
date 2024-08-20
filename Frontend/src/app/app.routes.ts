@@ -14,8 +14,8 @@ import { ProductsListComponent } from './products-list/products-list.component';
 // import { ProductformComponent } from './productform/productform.component';
 import { CustomersComponent } from './admin-dashboard/customers/customers.component';
 import { InvoiceComponent } from './invoice/invoice.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { FeedbackComponent } from './product/feedback/feedback.component';
+import { CheckoutComponent } from './product/checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -179,7 +179,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'Checkout',
+    path: 'app-checkout',
     component: CheckoutComponent,
   },
 ];

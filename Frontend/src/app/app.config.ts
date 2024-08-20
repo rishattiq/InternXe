@@ -2,12 +2,7 @@ import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms'; 
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { routes } from './app.routes';
 
 // const firebaseConfig = {
@@ -20,6 +15,10 @@ import { routes } from './app.routes';
 // };
 
 export const appConfig: ApplicationConfig = {
-  providers: [NgxChartsModule, ReactiveFormsModule,provideHttpClient(), provideRouter(routes), provideClientHydration()],
-
+  providers: [
+    ReactiveFormsModule,
+    provideHttpClient(),
+    provideRouter(routes),
+    provideClientHydration(),
+  ],
 };
