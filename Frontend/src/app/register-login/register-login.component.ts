@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import {
   ReactiveFormsModule,
   FormBuilder,
@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'app-register-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterOutlet],
   templateUrl: './register-login.component.html',
   styleUrls: ['./register-login.component.css'], // Corrected 'styleUrl' to 'styleUrls'
 })
