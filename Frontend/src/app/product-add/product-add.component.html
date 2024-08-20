@@ -1,50 +1,60 @@
-<h2>Add New Product</h2>
-<form (ngSubmit)="addProduct()">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" [(ngModel)]="newProduct.name" name="name" required>
+<h2 class="mb-4">Add New Product</h2>
+<form (ngSubmit)="addProduct()" class="mb-5">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="name">Name:</label>
+      <input type="text" id="name" class="form-control" [(ngModel)]="newProduct.name" name="name" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="price">Price:</label>
+      <input type="number" id="price" class="form-control" [(ngModel)]="newProduct.price" name="price" required>
+    </div>
   </div>
-  <div>
-    <label for="price">Price:</label>
-    <input type="number" id="price" [(ngModel)]="newProduct.price" name="price" required>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="description">Description:</label>
+      <input type="text" id="description" class="form-control" [(ngModel)]="newProduct.description" name="description" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" class="form-control" [(ngModel)]="newProduct.imageUrl" name="imageUrl">
+    </div>
   </div>
-  <div>
-    <label for="description">Description:</label>
-    <input type="text" id="description" [(ngModel)]="newProduct.description" name="description" required>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" class="form-control" [(ngModel)]="newProduct.quantity" name="quantity" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="rating">Rating:</label>
+      <input type="number" id="rating" class="form-control" [(ngModel)]="newProduct.rating" name="rating" required>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="category">Category:</label>
+      <input type="text" id="category" class="form-control" [(ngModel)]="newProduct.category" name="category" required>
+    </div>
   </div>
-  <div>
-    <label for="imageUrl">Image URL:</label>
-    <input type="text" id="imageUrl" [(ngModel)]="newProduct.imageUrl" name="imageUrl">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="comments">Comments:</label>
+      <input type="text" id="comments" class="form-control" [(ngModel)]="newProduct.comments" name="comments">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="createdAt">Created At:</label>
+      <input type="date" id="createdAt" class="form-control" [(ngModel)]="newProduct.createdAt" name="createdAt" required>
+    </div>
+    <div class="form-group col-md-2 align-self-end">
+      <div class="form-check">
+        <input type="checkbox" id="sale" class="form-check-input" [(ngModel)]="newProduct.sale" name="sale">
+        <label class="form-check-label" for="sale">Sale</label>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" [(ngModel)]="newProduct.quantity" name="quantity" required>
-  </div>
-  <div>
-    <label for="rating">Rating:</label>
-    <input type="number" id="rating" [(ngModel)]="newProduct.rating" name="rating" required>
-  </div>
-  <div>
-    <label for="comments">Comments:</label>
-    <input type="text" id="comments" [(ngModel)]="newProduct.comments" name="comments">
-  </div>
-  <div>
-    <label for="category">Category:</label>
-    <input type="text" id="category" [(ngModel)]="newProduct.category" name="category" required>
-  </div>
-  <div>
-    <label for="sale">Sale:</label>
-    <input type="checkbox" id="sale" [(ngModel)]="newProduct.sale" name="sale">
-  </div>
-  <div>
-    <label for="createdAt">Created At:</label>
-    <input type="date" id="createdAt" [(ngModel)]="newProduct.createdAt" name="createdAt" required>
-  </div>
-  <button type="submit">Add Record</button>
+  <button type="submit" class="btn btn-primary">Add Record</button>
 </form>
 
-<table class="table">
-  <thead>
+<table class="table table-bordered">
+  <thead class="thead-light">
     <tr>
       <th>ID</th>
       <th>Name</th>
@@ -56,7 +66,7 @@
       <th>Comments</th>
       <th>Category</th>
       <th>Sale</th>
-      <th>createdAt</th>
+      <th>Created At</th>
     </tr>
   </thead>
   <tbody>
@@ -65,12 +75,12 @@
       <td>{{ product.name }}</td>
       <td>{{ product.price.toFixed(2) }}</td>
       <td>{{ product.description }}</td>
-      <td><img [src]="product.imageUrl" alt="{{ product.name }}"></td>
+      <td><img [src]="product.imageUrl" alt="{{ product.name }}" class="img-thumbnail" style="max-width: 100px;"></td>
       <td>{{ product.quantity }}</td>
       <td>{{ product.rating }}</td>
       <td>{{ product.comments }}</td>
       <td>{{ product.category }}</td>
-      <td>{{ product.sale }}</td>
+      <td>{{ product.sale ? 'Yes' : 'No' }}</td>
       <td>{{ product.createdAt | date }}</td>
     </tr>
   </tbody>
