@@ -1,28 +1,25 @@
-<nav class="navbar navbar-expand-lg ">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['Product']">All</a>
+
+<h1 class="tw-font-serif tw-bg-green-50 tw-text-green-500 text-center p-5 tw-text-5xl">ALL-PRODUCTS</h1>
+
+
+
+<header class=" tw-font-medium tw-header tw-z-50 tw-sticky tw-top-0 tw-bg-green-200 tw-shadow-md  tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-02">
+  <!-- logo -->
+ 
+
+  <!-- navigation -->
+  <nav class="tw-nav tw-font-semibold tw-text-lg ">
+      <ul class="tw-flex tw-items-center tw-ml-12  tw-text-xl tw-space-x-12">
+        @for (item of categoryList; track $index) {
+          <li class="tw-p-4 tw-border-b-2 tw-border-green-500 tw-border-opacity-0 hover:tw-border-opacity-100 hover:tw-text-green-500 tw-duration-200 tw-cursor-pointer tw-active" (click)="categoryFilter(item)">
+            <a >{{item}}</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['shoes']">Shoes</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['shirts']">T-shirts</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link"  [routerLink]="['pants']">Pants</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['accessories']">Accessories</a>
-          </li>
+        }
+       
+          
+      
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-  </div>
-</nav>
+  </nav>
 
 <section class="schedule-section spad pt-4">
   <div class="container">
@@ -42,59 +39,139 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-4 mb-4">
-                      <div class="card">
-                          <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
-                          <div class="card-body">
-                              <h5 class="card-title btn"><b>Name</b></h5>
-                              <a class="price">$140</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title btn"><b>Name</b></h5>
-                            <a class="price">$140</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                  <div class="card">
-                      <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
-                      <div class="card-body">
-                          <h5 class="card-title btn"><b>Name</b></h5>
-                          <a class="price">$140</a>
-                      </div>
-                  </div>
-              </div>
-
-                  <div class="col-md-4 mb-4">
-                      <div class="card">
-                          <img class="card-img-top" src="https://tse1.mm.bing.net/th?id=OIP.v-q_GyWXooxjEXfiqVnusQHaHa&pid=Api&P=0&h=220" alt="Card image cap">
-                          <div class="card-body">
-                              <h5 class="card-title btn"><b>Name</b></h5>
-                              <a class="price">$140</a>
+  
+                <div class="tw-mt-8">
+                  <div class="tw-flow-root">
+                    <ul role="list" class="tw--my-6 tw-divide-y tw-divide-gray-200">
+                      <li class="tw-flex tw-py-6">
+                        <div class="tw-h-24 tw-w-24 tw-flex-shrink-0 tw-overflow-hidden tw-rounded-md tw-border tw-border-gray-200">
+                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="tw-h-full tw-w-full tw-object-cover tw-object-center">
+                        </div>
+  
+                        <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col">
+                          <div>
+                            <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
+                              <h3>
+                                <a href="#">Throwback Hip Bag</a>
+                              </h3>
+                              <p class="tw-ml-4">$90.00</p>
+                            </div>
+                            <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Salmon</p>
                           </div>
-                      </div>
+                          <div class="tw-flex tw-flex-1 tw-items-end tw-justify-between tw-text-sm">
+                            <p class="tw-text-gray-500">Qty 1</p>
+  
+                            <div class="tw-flex">
+                              <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">Remove</button>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="tw-flex tw-py-6">
+                        <div class="tw-h-24 tw-w-24 tw-flex-shrink-0 tw-overflow-hidden tw-rounded-md tw-border tw-border-gray-200">
+                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="tw-h-full tw-w-full tw-object-cover tw-object-center">
+                        </div>
+  
+                        <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col">
+                          <div>
+                            <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
+                              <h3>
+                                <a href="#">Medium Stuff Satchel</a>
+                              </h3>
+                              <p class="tw-ml-4">$32.00</p>
+                            </div>
+                            <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Blue</p>
+                          </div>
+                          <div class="tw-flex tw-flex-1 tw-items-end tw-justify-between tw-text-sm">
+                            <p class="tw-text-gray-500">Qty 1</p>
+  
+                            <div class="tw-flex">
+                              <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">Remove</button>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+  
+                      <!-- More products... -->
+                    </ul>
                   </div>
+                </div>
               </div>
-          </div>
-          <div class="col-lg-4">
-              <div class="sidebar">
-                  <h3>Products By __</h3>
-                  <div class="card">
-                      <!-- <img class="card-img-top" style="height: 100px !important;" src={{item.imageUrl}} alt="Card image cap"> -->
-                      <div class="card-body"> 
-                          <h5>Name</h5>
-                          <a class="btn btn-primary">Add to cart</a>
-                      </div>
-                  </div>
+  
+              <div class="tw-border-t tw-border-gray-200 tw-px-4 tw-py-6 sm:tw-px-6">
+                <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
+                  <p>Subtotal</p>
+                  <p>$262.00</p>
+                </div>
+                <p class="tw-mt-0.5 tw-text-sm tw-text-gray-500">Shipping and taxes calculated at checkout.</p>
+                <div class="tw-mt-6">
+                  <a  class="tw-cursor-pointer tw-flex tw-items-center tw-justify-center tw-rounded-md tw-border tw-border-transparent tw-bg-indigo-600 tw-px-6 tw-py-3 tw-text-base tw-font-medium tw-text-white tw-shadow-sm hover:tw-bg-indigo-700" (click)="checkoutPage()">Checkout</a>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-justify-center tw-text-center tw-text-sm tw-text-gray-500">
+                  <p>
+                    or
+                    <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500" (click)="closeCartList()">
+                      Continue Shopping
+                      <span aria-hidden="true"> &rarr;</span>
+                    </button>
+                  </p>
+                </div>
               </div>
+            </div>
           </div>
+        <!-- </div>
       </div>
-  </div>
-</section>
+    </div>
+  </div> -->
+  
+
+<!-- </header> -->
+
+
+   
+
+
+ <!-- products -->
+ <div class=" tw-flex tw-flex-wrap tw-ml-12 tw-gap-4 ">
+
+  @if (newProductListForFilterVar.length == 0) {
+    
+    <div class="tw-mt-4 tw-text-center">
+      <h1 class="tw-text-center tw-mb-4 tw-text-4xl tw-font-extrabold tw-leading-none tw-tracking-tight tw-text-gray-900 md:tw-text-5xl lg:tw-text-6xl dark:tw-text-white">
+        No <mark class=" tw-mt-4 tw-px-2 tw-text-white tw-bg-blue-600 tw-rounded dark:tw-bg-blue-500">Product</mark> for this category
+      </h1>
+    </div>
+ 
+    
+    
+
+
+  }
+  @else {
+    @for (item of newProductListForFilterVar; track $index) {
+   
+      <app-card-product [addTOcartFunc]="addToCart.bind(this)" [Product]="item"></app-card-product>
+     
+    
+  
+    }
+  }
+  
+ 
+
+</div>
+
+  
+
+
+
+
+
+          
+
+ 
+
+
 
 <router-outlet></router-outlet>
