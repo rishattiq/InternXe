@@ -9,19 +9,20 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { AddProductComponent } from './add-product/add-product.component';
-
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { TshirtsComponent } from './product/tshirts/tshirts.component';
+import { ProductformComponent } from './productform/productform.component';
+import { CustomersComponent } from './admin-dashboard/customers/customers.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
  
 
 
 export const routes: Routes = [
 
-  { 
-    path: '', 
-    component: LogInPageComponent
   
-  },
-
   {
     path: 'app-register',
     component: RegisterComponent,
@@ -35,7 +36,7 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        component:RegisterComponent
+        component:HomeComponent
     },
     {
       path: 'hero',
@@ -107,5 +108,45 @@ export const routes: Routes = [
     {
         path: 'Contact',
         component: ContactComponent
-    }
+    },
+    {
+      path: 'AdminDashboard',
+      component: AdminDashboardComponent,
+      children:[
+        {
+          path: 'Customers',
+          loadComponent: () => import('./admin-dashboard/customers/customers.component').then(m => m.CustomersComponent)
+        },
+        {
+          path: 'Notifications',
+          loadComponent: () => import('./admin-dashboard/notifications/notifications.component').then(m => m.NotificationsComponent)
+        },
+        {
+          path: 'Sales',
+          loadComponent: () => import('./admin-dashboard/sales/sales.component').then(m => m.SalesComponent)
+        }
+      ]
+    },
+
+    {
+      path: 'Customers',
+      component: CustomersComponent
+    },
+
+  {
+    path: 'ProductsList',
+    component: ProductsListComponent
+  },
+
+  {
+    path: 'Invoice',
+    component: InvoiceComponent
+  },
+
+  {
+    path: 'Checkout',
+    component: CheckoutComponent 
+  }
+
+  
 ];

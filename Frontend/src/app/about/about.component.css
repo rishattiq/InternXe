@@ -2,13 +2,38 @@
     align-items: center;
     text-align: center;
     margin-top: 3%;
-}
 
+
+}
+.info-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    
+  }
+  
+  .info-item {
+    position: relative;
+    text-align: center;
+    max-width: 200px; /* Adjust based on your needs */
+  }
+  
+
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: 1;
+  }
+  
 
 .image {
     width: 50px;
     height: 50px;
-    margin-left: 3%;
+    margin-left:-350%;
     margin-right: 1%;
 }
 
