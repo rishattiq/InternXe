@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { RegisterComponent } from '../register/register.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in-page',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, RegisterComponent, FormsModule],
+  imports: [RouterLink, RouterOutlet, FormsModule],
   templateUrl: './log-in-page.component.html',
   styleUrls: ['./log-in-page.component.css'], // Corrected to 'styleUrls'
 })
