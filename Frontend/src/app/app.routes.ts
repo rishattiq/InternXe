@@ -77,7 +77,15 @@ export const routes: Routes = [
           import('./admin-dashboard/sales/sales.component').then(
             (m) => m.SalesComponent
           ),
-      },
+      }, 
+      {
+        path: 'AdminProduct',
+        loadComponent: () => 
+          import (
+            './admin-crud/admin-crud.component'
+          ).then((m) => m.ProductTableComponent)
+        
+      }
     ],
   },
 
@@ -104,5 +112,5 @@ export const routes: Routes = [
   {
     path: 'app-product-add',
     component: ProductAddComponent,
-  },
+  }
 ];

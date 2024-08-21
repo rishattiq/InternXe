@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,9 +11,13 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AdminDashboardComponent {
 
-  constructor(){
+  constructor(private router: Router){
 
   }
+
+  // Orders() {
+  //   this.router.navigateByUrl('Sales');
+  // }
 
 
   toggleSidebar(): void {
