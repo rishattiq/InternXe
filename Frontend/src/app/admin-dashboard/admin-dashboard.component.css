@@ -42,9 +42,11 @@ body, html {
 }
 
 .sidebar .logo h2 {
-    color: #ffc107;
+    color: #fffefb;
     margin-bottom: 30px;
     text-align: center;
+    font-size: 45px;
+    font-style: italic;
 }
 
 .sidebar ul {
@@ -54,8 +56,9 @@ body, html {
 
 .sidebar ul li {
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 25px;
     border-bottom: 1px solid #495057;
+    margin-top: 50px;
 }
 
 .sidebar ul li:hover {
@@ -65,55 +68,79 @@ body, html {
 
 .dashboard {
     flex: 1;
-    margin-left: 260px;
+    margin-left: 240px;
+
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     transition: margin-left 0.3s ease;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.dashboardcard, .card {
-    background-color: #fff;
+
+
+.dashboardcard, .card1 , .card2 {
+   
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;
+    padding: 50px;
+    width: 500px;
+    margin-top: 150px;
+    align-items: center;
     text-align: center;
     transition: transform 0.2s ease;
+    height: 500px;
+    background: rgba(219, 215, 215, 0.8);
+    color: white;
    
 }
 
-.dashboardcard:hover, .card:hover {
+.dashboardcard:hover, .card1:hover, .card2:hover {
     transform: translateY(-5px);
 }
 
-.dashboardcard h2, .card h2 {
+ .card1 h2 , .card2 h2{
     margin: 0;
     color: #343a40;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 130px;
+    font-size: 30px;
+
 }
 
-.dashboardcard p, .card p {
-    margin: 10px 0;
-    color: #6c757d;
+.dashboardcard h2{
+    color: #343a40;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
 }
+
+.dashboardcard p, .card1 p , .card2 p {
+
+    color: #202122;
+    
+}
+
+.card1 p, .card2 p {
+    
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 .dashboardcard .value {
     font-size: 24px;
     font-weight: bold;
-    color: #28a745;
+    color: #a72828;
 }
 
-.card .percentage {
-    font-size: 18px;
-    font-weight: bold;
-    color: #28a745;
-}
 
-.card .percentage.down {
-    color: #dc3545;
-}
+
 
 @media (max-width: 768px) {
     .sidebar {
@@ -150,3 +177,18 @@ body, html {
 }
 
 
+/* .card1 h2 , .card1 p{
+   
+    
+    background: rgba(141, 136, 136, 0.8);
+    font-style: italic;
+   
+}
+
+
+.card2 h2 , .card2 p{
+   
+    
+    background: rgba(216, 211, 211, 0.8);
+   
+} */

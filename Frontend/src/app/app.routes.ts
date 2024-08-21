@@ -19,6 +19,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { CheckoutComponent } from './product/checkout/checkout.component';
 
 import { FeedbackComponent } from './product/feedback/feedback.component';
+import { SalesComponent } from './admin-dashboard/sales/sales.component';
 
 export const routes: Routes = [
 
@@ -54,7 +55,7 @@ export const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: 'AdminDashboard',
+    path: 'app-admin-dashboard',
     component: AdminDashboardComponent,
     children: [
       {
@@ -71,6 +72,7 @@ export const routes: Routes = [
             './admin-dashboard/notifications/notifications.component'
           ).then((m) => m.NotificationsComponent),
       },
+      
       {
         path: 'Sales',
         loadComponent: () =>
@@ -94,7 +96,15 @@ export const routes: Routes = [
     component: CustomersComponent,
   },
 
-
+  // {
+  //   path: 'app-admin-dashboard',
+  //   component: AdminDashboardComponent,
+  // },
+  // {
+  //   path: 'app-sales',
+  //   component: SalesComponent,
+  // },
+ 
 
   {
     path: 'Invoice',

@@ -2,10 +2,10 @@
     <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
     <div class="sidebar">
         <div class="logo">
-            <h2>InternXe</h2>
+            <h2><b>InternXe</b></h2>
         </div>
         <ul>
-            <li [routerLink]="['AdminDashboard']">Dashboard</li>
+            <li (click)="Admin()">Dashboard</li>
             <li [routerLink]="['AdminProduct']" >Products</li>
             <li [routerLink]="['Sales']" >Sales</li>
             <li [routerLink]="['Customers']" >Customers</li>
@@ -14,34 +14,23 @@
         </ul>
     </div>
 
-    <div class="dashboard">
+    <div class="dashboard" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/a39b01197828603.Y3JvcCw1NzU0LDQ1MDEsMTI4LDA.jpg');" >
         <div class="dashboardcard">
-            <h2>Congratulations John 🎉</h2>
-            <p>You are the best seller of this month</p>
-            <div class="value">$68.5K</div>
+            <h2>Welcome to Admin Dashboard🎉</h2>
+            <p>You have given the authorization to all the data-logs</p>
+            <div class="value">Total Sales</div>
             <p>58% of sales target</p>
-            <a class="btn details" [routerLink]="['Home']" >View Details</a>
+            <a class="btn details" [routerLink]="['Sales']" >View Details</a>
         </div>
-        <div class="card">
+        <div class="card1">
             <h2>248K</h2>
             <p>Total Orders</p>
-            <div class="percentage">+24%</div>
         </div>
-        <div class="card">
-            <h2>$47.6K</h2>
-            <p>Total Sales</p>
-            <div class="percentage">+14%</div>
-        </div>
-        <div class="card">
+        <div class="card2">
             <h2>189K</h2>
-            <p>Total Visits</p>
-            <div class="percentage down">-35%</div>
+            <p>Total Users</p>
         </div>
-        <div class="card">
-            <h2>24.6%</h2>
-            <p>Bounce Rate</p>
-            <div class="percentage">+18%</div>
-        </div>
+
     </div>
 </div>
 <router-outlet></router-outlet>

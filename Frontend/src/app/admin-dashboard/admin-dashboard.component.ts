@@ -19,6 +19,9 @@ export class AdminDashboardComponent {
   //   this.router.navigateByUrl('Sales');
   // }
 
+  Admin(){
+    this.router.navigateByUrl('app-admin-dashboard')
+  }
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
