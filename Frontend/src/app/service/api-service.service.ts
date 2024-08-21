@@ -22,6 +22,10 @@ export class APIService {
     return this.http.get('http://localhost:5292/api/Customer/getallcustomers');
   }
 
+  get_allContacts() {
+    return this.http.get('http://localhost:5292/api/Contact/getallmessages');
+  }
+
   createUser(obj: any) {
     return this.http.post('https://jsonplaceholder.typicode.com/users', obj);
   }
