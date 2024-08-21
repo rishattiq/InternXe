@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 
-
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-
 
 import { RegisterLoginComponent } from './register-login/register-login.component';
 
@@ -21,40 +19,35 @@ import { CheckoutComponent } from './product/checkout/checkout.component';
 import { FeedbackComponent } from './product/feedback/feedback.component';
 
 export const routes: Routes = [
-
-  { 
-    path: '', 
+  {
+    path: '',
     component: RegisterLoginComponent,
-    pathMatch: 'full'
-  
+    pathMatch: 'full',
   },
-    {
-        path: "home",
-        component: HomeComponent
-    },
-    {
-        path: "app-feedback",
-        component: FeedbackComponent
-    },
-  
-    {
-        path: 'Product',
-        component: ProductComponent,   
-    },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'app-feedback',
+    component: FeedbackComponent,
+  },
 
-    
+  {
+    path: 'Product',
+    component: ProductComponent,
+  },
 
   {
     path: 'About',
     component: AboutComponent,
-  
   },
   {
     path: 'Contact',
     component: ContactComponent,
   },
   {
-    path: 'AdminDashboard',
+    path: 'admindashboard',
     component: AdminDashboardComponent,
     children: [
       {
@@ -78,6 +71,13 @@ export const routes: Routes = [
             (m) => m.SalesComponent
           ),
       },
+      {
+        path: 'Adminproduct',
+        loadComponent: () =>
+          import('./admin-crud/admin-crud.component').then(
+            (m) => m.ProductTableComponent
+          ),
+      },
     ],
   },
 
@@ -85,8 +85,6 @@ export const routes: Routes = [
     path: 'Customers',
     component: CustomersComponent,
   },
-
-
 
   {
     path: 'Invoice',

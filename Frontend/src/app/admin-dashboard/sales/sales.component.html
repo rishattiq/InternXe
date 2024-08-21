@@ -1,45 +1,44 @@
-
-
-
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Order details</h1>
-        </header>
-        
-        <div class="feedback-table">
-            <table class="table">
-                <thead>
-                    <tr class="tablehead">
-                        <th scope="col">#</th>
-                        <th scope="col">OrderId</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Product Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Grand total</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
+  <div class="container">
+    <header class="header">
+      <h1>Order details</h1>
+    </header>
 
-                    <tr *ngFor="let item of userlist; let index = index">
-                        <th scope="row">{{ index + 1 }}</th>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.id}}</td>
-                        <td>{{ item.id }}</td>
-                       
+    <div class="feedback-table">
+      <table class="table">
+        <thead>
+          <tr class="tablehead">
+            <th scope="col">#</th>
+            <th scope="col">OrderId</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Date</th>
+            <th scope="col">Grand total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Iterate over each order -->
+          <tr *ngFor="let order of orderlist; let index = index">
+            <th scope="row">{{ index + 1 }}</th>
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.customerUsername }}</td>
+            <!-- Iterate over each item in the orderItems array -->
+            <td colspan="3">
+              <table>
+                <tr *ngFor="let item of order.orderItems">
+                  <td>{{ item.productName }}</td>
+                  <td>{{ item.price }}</td>
+                  <td>{{ item.quantity }}</td>
                 </tr>
-                
-                  
-                </tbody>
-            </table>
-        </div>
+              </table>
+            </td>
+            <td>{{ order.orderDate }}</td>
+            <td>{{ order.grandTotal }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </body>
-

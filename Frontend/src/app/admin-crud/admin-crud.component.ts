@@ -25,8 +25,8 @@ interface Product {
 })
 export class ProductTableComponent implements OnInit {
   products: Product[] = [];
-  apiUrl = 'http://localhost:5079/api/Products/getallproducts'; // Replace with your actual API endpoint
-  apiUrl2 = 'http://localhost:5079/api/Products/deleteproductbyid'; // Replace with your actual API endpoint
+  apiUrl = 'http://localhost:5292/api/Product/getallproducts'; // Replace with your actual API endpoint
+  apiUrl2 = 'http://localhost:5292/api/Product/deleteproductbyid'; // Replace with your actual API endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -45,7 +45,7 @@ export class ProductTableComponent implements OnInit {
 
   // Uncomment and implement the deleteProduct method if needed
   deleteProduct(id: number) {
-    const url = `${this.apiUrl2}/${id}`;  // Fixed string interpolation here
+    const url = `${this.apiUrl2}/${id}`; // Fixed string interpolation here
     this.http.delete(url).subscribe(
       () => {
         this.products = this.products.filter((product) => product.id !== id);

@@ -1,6 +1,8 @@
 using webapi.Data;
 using webapi.Models;
 using Microsoft.EntityFrameworkCore;
+using webapi.DTOs;
+
 
 namespace webapi.Services
 {
@@ -26,12 +28,28 @@ namespace webapi.Services
         }
 
         // Get all orders (for admin)
-        public async Task<List<Order>> GetAllOrdersAsync()
+        public async Task<List<OrderResponseDto>> GetAllOrdersAsync()
         {
-            return await _context.Orders
-                .Include(o => o.OrderItems) // Include order items
-                .ThenInclude(oi => oi.Product) // Include product details
+            var orders = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
                 .ToListAsync();
+
+            var orderDtos = orders.Select(o => new OrderResponseDto
+            {
+                OrderId = o.Id,
+                CustomerUsername = _context.Customers.FirstOrDefault(c => c.Id == o.CustomerId)?.Username,
+                OrderDate = o.OrderDate,
+                GrandTotal = o.GrandTotal,
+                OrderItems = o.OrderItems.Select(oi => new OrderItemDto
+                {
+                    ProductName = oi.Product.Name,
+                    Price = oi.Price,
+                    Quantity = oi.Quantity
+                }).ToList()
+            }).ToList();
+
+            return orderDtos;
         }
 
         // Create order

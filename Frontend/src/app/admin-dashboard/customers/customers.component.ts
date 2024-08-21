@@ -7,12 +7,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [RouterOutlet,CommonModule, RouterLink],
+  imports: [RouterOutlet, CommonModule, RouterLink],
   templateUrl: './customers.component.html',
-  styleUrl: './customers.component.css'
+  styleUrl: './customers.component.css',
 })
 export class CustomersComponent {
-
   userservice = inject(APIService);
   userlist: any[] = [];
 
@@ -28,15 +27,34 @@ export class CustomersComponent {
     });
   }
 
+  // onDelete(userid: any) {
+  //   // const isdel = confirm("Are you sure you want to delete it?");
+  //   // if (isdel) {
+  //   //   this.userservice.delete_user(userid).subscribe((data: any) => {
+  //   //     alert("Deleted successfully");
+  //   //     this.userList(); // Refresh user list after deletion
+  //   //   });
+  //   // } else {
+  //   //   alert("Deletion canceled");
+  //   // }
+
+  //   this.userservice.delete_user(userid).subscribe((data: any) => {
+  //     alert('Deleted successfully');
+  //     this.userList(); // Refresh user list after deletion
+  //   });
+  // }
+
   onDelete(userid: any) {
-    const isdel = confirm("Are you sure you want to delete it?");
-    if (isdel) {
-      this.userservice.delete_user(userid).subscribe((data: any) => {
-        alert("Deleted successfully");
+    debugger;
+    this.userservice.delete_user(userid).subscribe(
+      (data: any) => {
+        alert('Deleted successfully');
         this.userList(); // Refresh user list after deletion
-      });
-    } else {
-      alert("Deletion canceled");
-    }
+      },
+      (error: any) => {
+        console.error('Error deleting user:', error);
+        alert('Failed to delete user. Please try again.');
+      }
+    );
   }
 }

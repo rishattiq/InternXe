@@ -6,28 +6,23 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-sales',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './sales.component.html',
-  styleUrl: './sales.component.css'
+  styleUrl: './sales.component.css',
 })
 export class SalesComponent {
-
-
-  
   userservice = inject(APIService);
-  userlist: any[] = [];
+  orderlist: any[] = [];
 
   constructor() {}
 
   ngOnInit() {
-    this.userList();
+    this.orderList();
   }
 
-  userList() {
-    this.userservice.get_userList().subscribe((data: any) => {
-      this.userlist = data;
+  orderList() {
+    this.userservice.get_orders().subscribe((data: any) => {
+      this.orderlist = data;
     });
   }
-
-
 }

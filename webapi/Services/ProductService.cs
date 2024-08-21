@@ -47,6 +47,7 @@ namespace webapi.Services
         // Add a new Product
         public async Task AddProductAsync(Product product)
         {
+            product.CreatedAt = DateTime.Now;
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }

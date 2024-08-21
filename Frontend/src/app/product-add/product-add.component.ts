@@ -15,7 +15,7 @@ interface Product {
   category: string;
   sale: boolean;
   createdAt: Date;
-}   
+}
 @Component({
   selector: 'app-product-add',
   standalone: true,
@@ -34,11 +34,11 @@ export class ProductAddComponent {
     rating: 0,
     comments: '',
     category: '',
-    sale: false,
+    sale: true,
     createdAt: new Date(),
   };
-  apiUrl = 'http://localhost:5079/api/Products/addproduct'; // Replace with your actual API endpoint
-products: any;
+  apiUrl = 'http://localhost:5292/api/Product/addproduct'; // Replace with your actual API endpoint
+  products: any;
   constructor(private http: HttpClient) {}
   addProduct() {
     this.http.post<Product>(this.apiUrl, this.newProduct).subscribe(
@@ -48,7 +48,7 @@ products: any;
         this.resetForm();
       },
       (error) => {
-        console.error('Error adding product:', error);
+        console.log('Error adding product:', error);
       }
     );
   }

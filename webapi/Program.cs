@@ -28,6 +28,7 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<ContactService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

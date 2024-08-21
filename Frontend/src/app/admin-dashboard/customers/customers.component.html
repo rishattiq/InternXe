@@ -1,82 +1,33 @@
-<!-- <div class="row" style="margin: 20px 50px;">
-    <div class="col-12 text-end mb-3">
-        <button class="btn btn-primary" routerLink="/createUser">
-            Add new record
-        </button>
-    </div>
-</div> -->
+<div class="container">
+  <header class="header">
+    <h1>Customer Details</h1>
+  </header>
 
-<!-- <div class="row">
-    <div class="col-12">
-        <table class="table table-bordered">
-            <thead>
-                <tr class="tablehead">
-                    <th scope="col">#</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of userlist; let index = index">
-                    <th>{{ index + 1 }}</th>
-                    <td>{{ item.username }}</td>
-                    <td>{{ item.email }}</td>
-                    <td>{{ item.password }}</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm" (click)="onDelete(item.id)">
-                            Delete
-                        </button>
-                        <button class="btn btn-warning btn-sm" (click)="onEdit(item.id)">Edit</button> 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->
+  <div class="feedback-table">
+    <table class="table">
+      <thead>
+        <tr class="tablehead">
+          <th scope="col">#</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <tr *ngFor="let item of userlist; let index = index">
+          <th>{{ item.id }}</th>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.password }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" type="button" (click)="onDelete(item.id)">
+              Delete
+            </button>
+        </tr>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Details</title>
-    
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Customer Details</h1>
-        </header>
-        
-        <div class="feedback-table">
-            <table class="table">
-                <thead>
-                    <tr class="tablehead">
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <tr *ngFor="let item of userlist; let index = index">
-                            <th>{{ index + 1 }}</th>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.email }}</td>
-                            <td>{{ item.password }}</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm" (click)="onDelete(item.id)">
-                                    Delete
-                                </button>
-                    </tr>
-                  
-                </tbody>
-            </table>
-        </div>
-    </div>
-</body>
-</html>
+      </tbody>
+    </table>
+  </div>
+</div>
