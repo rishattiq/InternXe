@@ -1,45 +1,54 @@
-
-
-
-
-    <div class="top">
-        <header class="header">
-            <h1>Order details</h1>
-        </header>
-        
-        <div class="table">
-            <table>
-                <thead>
-                    <tr class="tablehead">
-                        <th scope="col">#</th>
-                        <th scope="col">OrderId</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Product Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Grand total</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr *ngFor="let item of userlist; let index = index">
-                        <th scope="row">{{ index + 1 }}</th>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.id}}</td>
-                        <td>{{ item.id }}</td>
-                       
-                </tr>
-                
-                  
-                </tbody>
-            </table>
-        </div>
+<div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
+<div class="sidebar">
+    <div class="logo">
+        <h2><b>InternXe</b></h2>
     </div>
+    <ul>
+        <li (click)="Admin()">Dashboard</li>
+        <li (click)="Products()" >Products</li>
+        <li (click)="Sales()" >Sales</li>
+        <li (click)="Users()">Customers</li>
+        <li  (click)="Notifications()" >Complaints</li>
+        
+    </ul>
+</div>
+<div class="space">
+<h1 class="heading">ORDER DETAILS</h1>
+  <table class="table">
+    <thead class="header">
+        <tr>
+          
+            <th rowspan="2">#</th>
+            <th rowspan="2">OrderId</th>
+            <th rowspan="2">Customer Name</th>
+            <th colspan="3">Product</th>
+            <th rowspan="2" >Date</th>
+            <th rowspan="2">Grand total</th>
+           
+     </tr>
+     <tr>
+        <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Product Quantity</th>
+     </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of userlist; let index = index">
+            
+                <td class="col">{{ index + 1 }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.id}}</td>
+                <td>{{ item.id }}</td>
+               
+        
+       
+     </tr>
+     
+    </tbody>
+</table>
 
-
+</div>

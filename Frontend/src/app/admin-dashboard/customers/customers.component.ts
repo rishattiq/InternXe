@@ -1,6 +1,6 @@
 import { inject, Component } from '@angular/core';
 import { APIService } from '../../service/api-service.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet , Router} from '@angular/router';
 import { CommonEngine } from '@angular/ssr';
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +16,7 @@ export class CustomersComponent {
   userservice = inject(APIService);
   userlist: any[] = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.userList();
@@ -39,4 +39,33 @@ export class CustomersComponent {
       alert("Deletion canceled");
     }
   }
+  Admin(){
+    this.router.navigateByUrl('app-admin-dashboard')
+  }
+
+  Notifications(){
+    this.router.navigateByUrl('app-notifications')
+  }
+
+  Products(){
+    this.router.navigateByUrl('app-admin-crud')
+  }
+ 
+  Sales(){
+    this.router.navigateByUrl('app-sales')
+  }
+
+  Users(){
+    this.router.navigateByUrl('app-customers')
+  }
+
+  
+
+  toggleSidebar(): void {
+    const sidebar = document.querySelector('.sidebar') as HTMLElement;
+
+    if (sidebar) {
+        sidebar.classList.toggle('active');
+    }
+}
 }

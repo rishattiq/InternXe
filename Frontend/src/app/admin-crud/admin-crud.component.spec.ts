@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-<<<<<<<< HEAD:Frontend/src/app/product/feedback/feedback.component.spec.ts
+
 import { FeedbackComponent } from './feedback.component';
+import { AdminCrudComponent } from './admin-crud.component';
 
 describe('FeedbackComponent', () => {
   let component: FeedbackComponent;
@@ -14,8 +15,8 @@ describe('FeedbackComponent', () => {
     .compileComponents();
     
     fixture = TestBed.createComponent(FeedbackComponent);
-========
-import { AdminCrudComponent } from './admin-crud.component';
+
+
 
 describe('AdminCrudComponent', () => {
   let component: AdminCrudComponent;
@@ -28,7 +29,7 @@ describe('AdminCrudComponent', () => {
     .compileComponents();
     
     fixture = TestBed.createComponent(AdminCrudComponent);
->>>>>>>> dev1Test:Frontend/src/app/admin-crud/admin-crud.component.spec.ts
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -36,4 +37,4 @@ describe('AdminCrudComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+

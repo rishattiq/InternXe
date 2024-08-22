@@ -171,24 +171,9 @@ body, html {
 }
 
 .details{
-    background-color: #131313;
+    background-color: #494981;
     color: white;
     margin-top: 80px;
+    size: 50px;
+    font-size: 20px;
 }
-
-
-/* .card1 h2 , .card1 p{
-   
-    
-    background: rgba(141, 136, 136, 0.8);
-    font-style: italic;
-   
-}
-
-
-.card2 h2 , .card2 p{
-   
-    
-    background: rgba(216, 211, 211, 0.8);
-   
-} */

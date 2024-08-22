@@ -6,21 +6,21 @@
         </div>
         <ul>
             <li (click)="Admin()">Dashboard</li>
-            <li [routerLink]="['AdminProduct']" >Products</li>
-            <li [routerLink]="['Sales']" >Sales</li>
-            <li [routerLink]="['Customers']" >Customers</li>
-            <li  [routerLink]="['Notifications']" >Complaints</li>
+            <li (click)="Products()" >Products</li>
+            <li (click)="Sales()" >Sales</li>
+            <li (click)="Users()">Customers</li>
+            <li  (click)="Notifications()" >Complaints</li>
             
         </ul>
     </div>
 
     <div class="dashboard" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/a39b01197828603.Y3JvcCw1NzU0LDQ1MDEsMTI4LDA.jpg');" >
         <div class="dashboardcard">
-            <h2>Welcome to Admin Dashboard🎉</h2>
-            <p>You have given the authorization to all the data-logs</p>
-            <div class="value">Total Sales</div>
-            <p>58% of sales target</p>
-            <a class="btn details" [routerLink]="['Sales']" >View Details</a>
+            <h2 style="margin-top: 40px; font-size:30px">Welcome to Admin Dashboard🎉</h2>
+            <p style="margin-top: 30px; font-size:20px">You have given the authorization to all the data-logs</p>
+            <div style="margin-top: 30px; font-size:30px" class="value">Total Sales</div>
+            <p style="font-size: 20px;">58% of sales target</p>
+            <a class="btn details" (click)="Sales()" >View Details</a>
         </div>
         <div class="card1">
             <h2>248K</h2>

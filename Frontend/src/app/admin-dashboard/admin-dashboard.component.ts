@@ -15,13 +15,29 @@ export class AdminDashboardComponent {
 
   }
 
-  // Orders() {
-  //   this.router.navigateByUrl('Sales');
-  // }
+
 
   Admin(){
     this.router.navigateByUrl('app-admin-dashboard')
   }
+
+  Notifications(){
+    this.router.navigateByUrl('app-notifications')
+  }
+
+  Products(){
+    this.router.navigateByUrl('app-admin-crud')
+  }
+ 
+  Sales(){
+    this.router.navigateByUrl('app-sales')
+  }
+
+  Users(){
+    this.router.navigateByUrl('app-customers')
+  }
+
+  
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
