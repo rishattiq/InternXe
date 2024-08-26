@@ -18,6 +18,7 @@ import { CheckoutComponent } from './product/checkout/checkout.component';
 
 import { FeedbackComponent } from './product/feedback/feedback.component';
 import { SalesComponent } from './admin-dashboard/sales/sales.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 export const routes: Routes = [
   {
