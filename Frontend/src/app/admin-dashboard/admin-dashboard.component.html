@@ -35,7 +35,7 @@
 </div>
 <router-outlet></router-outlet>
 
-<!-- 
+<!--
 <div class="dashboard">
     <div class="dashboard-cards">
       <div class="card">
@@ -55,11 +55,11 @@
         <p>{{ lowStockItems }}</p>
       </div>
     </div>
-    
+
     <div class="dashboard-charts">
-      
+
       <div class="chart">
-        <canvas baseChart 
+        <canvas baseChart
                 [datasets]="salesData"
                 [labels]="salesLabels"
                 [options]="chartOptions"
@@ -68,7 +68,7 @@
         </canvas>
       </div>
       <div class="chart" *ngIf="customerData">
-        <ngx-charts-pie-chart 
+        <ngx-charts-pie-chart
           [results]="customerData"
           [legend]="true">
         </ngx-charts-pie-chart>

@@ -17,6 +17,7 @@ interface Product {
   sale: boolean;
   createdAt: Date;
 }
+
 @Component({
   selector: 'app-product-add',
   standalone: true,
@@ -35,7 +36,7 @@ export class ProductAddComponent {
     rating: 0,
     comments: '',
     category: '',
-    sale: false,
+    sale: true,
     createdAt: new Date(),
   };
   apiUrl = 'https://476d-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
@@ -49,7 +50,7 @@ export class ProductAddComponent {
         this.resetForm();
       },
       (error) => {
-        console.error('Error adding product:', error);
+        console.log('Error adding product:', error);
       }
     );
   }

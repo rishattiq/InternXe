@@ -9,12 +9,9 @@ import { RouterLink, Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './sales.component.html',
-  styleUrl: './sales.component.css'
+  styleUrl: './sales.component.css',
 })
 export class SalesComponent {
-
-
-  
   userservice = inject(APIService);
   orderlist: any[] = [];
 

@@ -90,14 +90,14 @@ export class NotificationsComponent {
   }
 
   onDelete(userid: any) {
-    const isdel = confirm("Are you sure you want to delete it?");
+    const isdel = confirm('Are you sure you want to delete it?');
     if (isdel) {
       this.userservice.delete_user(userid).subscribe(() => {
         alert("Deleted successfully");
         this.Complaints(); // Refresh user list after deletion
       });
     } else {
-      alert("Deletion canceled");
+      alert('Deletion canceled');
     }
   }
 
