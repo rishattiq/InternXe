@@ -41,7 +41,6 @@ export class SalesComponent {
         if (error.status === 200 && typeof error.error.text === 'string') {
           console.log('Received HTML instead of JSON:', error.error.text);
         } else {
-          // Handle other types of errors
           console.error('Error:', error.message);
         }
       }

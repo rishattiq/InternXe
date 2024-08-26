@@ -63,19 +63,19 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class NotificationsComponent {
   userservice = inject(APIService);
-  userlist: any[] = [];
+  messages: any[] = [];
   statusList: string[] = []; 
   
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.userList();
+    this.Complaints();
   }
 
-  userList() {
-    this.userservice.get_userList().subscribe((data: any) => {
-      this.userlist = data;
-      this.statusList = this.userlist.map(() => 'Pending'); 
+  Complaints() {
+    this.userservice.get_complaints().subscribe((data: any) => {
+      this.messages = data;
+      this.statusList = this.messages.map(() => 'Pending'); 
     });
   }
 
@@ -93,7 +93,7 @@ export class NotificationsComponent {
     if (isdel) {
       this.userservice.delete_user(userid).subscribe(() => {
         alert("Deleted successfully");
-        this.userList(); // Refresh user list after deletion
+        this.Complaints(); // Refresh user list after deletion
       });
     } else {
       alert("Deletion canceled");

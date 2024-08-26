@@ -36,7 +36,7 @@ export class APIService {
   }
 
   get_complaints(){
-    return this.http.get("https://jsonplaceholder.typicode.com/users")
+    return this.http.get("https://744a-39-40-97-214.ngrok-free.app/api/Contact/getallmessages")
   }
 
 
