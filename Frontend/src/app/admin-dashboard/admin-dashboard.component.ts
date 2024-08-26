@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,10 +11,34 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AdminDashboardComponent {
 
-  constructor(){
+  constructor(private router: Router){
 
   }
 
+
+  
+
+  Admin(){
+    this.router.navigateByUrl('app-admin-dashboard')
+  }
+
+  Notifications(){
+    this.router.navigateByUrl('app-notifications')
+  }
+
+  Products(){
+    this.router.navigateByUrl('app-admin-crud')
+  }
+ 
+  Sales(){
+    this.router.navigateByUrl('app-sales')
+  }
+
+  Users(){
+    this.router.navigateByUrl('app-customers')
+  }
+
+  
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;

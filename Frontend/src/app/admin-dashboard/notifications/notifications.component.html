@@ -1,39 +1,48 @@
-
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Feedback Review</h1>
-        </header>
-        
-        <div class="feedback-table">
-            <table class="table">
-                <thead>
-                    <tr class="tablehead">
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Feedback</th>
-                        <th scope="col">Date Submitted</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr *ngFor="let item of userlist; let index = index">
-                        <th scope="row">{{ index + 1 }}</th>
-                        <td>{{ item.username }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>{{ item.password }}</td>
-                        <td>{{ item.username }}</td>  
-                        <td>
-                            <button class="btn btn-danger btn-sm">Delete</button>
-                        </td>
-                        
-                </tr>
-                
-                </tbody>
-            </table>
-        </div>
+<div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
+<div class="sidebar">
+    <div class="logo">
+        <h2><b>InternXe</b></h2>
     </div>
-</body>
-
+    <ul>
+        <li (click)="Admin()">Dashboard</li>
+        <li (click)="Products()" >Products</li>
+        <li (click)="Sales()" >Sales</li>
+        <li (click)="Users()">Customers</li>
+        <li  (click)="Notifications()" >Complaints</li>
+        
+    </ul>
+</div>
+    <h1 class="heading">CONTACT MESSAGES</h1>
+    <div class="space">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col">#</th>
+            <th class="col">Username</th>
+            <th class="col">Email</th>
+            <th class="col">Message</th>
+            <th class="col">Date Submitted</th>
+            <th class="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userlist; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ item.username }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.complaint }}</td>
+            <td>{{ item.dateSubmitted }}</td>  
+            <td>
+              <button 
+                class="status" 
+                [ngClass]="statusList[i] === 'Completed' ? 'progress' : 'open'"
+                (click)="changeStatus(i)">
+                {{ statusList[i] }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  

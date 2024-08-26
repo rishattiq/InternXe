@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, Router } from '@angular/router';
 
 interface Product {
   id: number;
@@ -19,7 +20,7 @@ interface Product {
 @Component({
   selector: 'app-product-add',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.css'],
 })
@@ -39,7 +40,7 @@ export class ProductAddComponent {
   };
   apiUrl = 'https://744a-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
   products: any;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
   addProduct() {
     this.http.post<Product>(this.apiUrl, this.newProduct).subscribe(
       (response) => {
@@ -66,5 +67,9 @@ export class ProductAddComponent {
       sale: false,
       createdAt: new Date(),
     };
+  }
+
+  Products() {
+    this.router.navigateByUrl('app-admin-crud');
   }
 }

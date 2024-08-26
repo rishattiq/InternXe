@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProductComponent } from '../product.component';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [ProductComponent],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css',
 })

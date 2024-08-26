@@ -17,7 +17,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { CheckoutComponent } from './product/checkout/checkout.component';
 
 import { FeedbackComponent } from './product/feedback/feedback.component';
-import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { SalesComponent } from './admin-dashboard/sales/sales.component';
 
 export const routes: Routes = [
   {
@@ -48,35 +48,63 @@ export const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: 'AdminDashboard',
+    path: 'app-admin-dashboard',
     component: AdminDashboardComponent,
     children: [
-      {
-        path: 'Customers',
-        loadComponent: () =>
-          import('./admin-dashboard/customers/customers.component').then(
-            (m) => m.CustomersComponent
-          ),
-      },
-      {
-        path: 'Notifications',
-        loadComponent: () =>
-          import(
-            './admin-dashboard/notifications/notifications.component'
-          ).then((m) => m.NotificationsComponent),
-      },
-      {
-        path: 'Sales',
-        loadComponent: () =>
-          import('./admin-dashboard/sales/sales.component').then(
-            (m) => m.SalesComponent
-          ),
-      },
+      // {
+      //   path: 'Customers',
+      //   loadComponent: () =>
+      //     import('./admin-dashboard/customers/customers.component').then(
+      //       (m) => m.CustomersComponent
+      //     ),
+      // },
+      // {
+      //   path: 'Notifications',
+      //   loadComponent: () =>
+      //     import(
+      //       './admin-dashboard/notifications/notifications.component'
+      //     ).then((m) => m.NotificationsComponent),
+      // },
+      // {
+      //   path: 'Sales',
+      //   loadComponent: () =>
+      //     import('./admin-dashboard/sales/sales.component').then(
+      //       (m) => m.SalesComponent
+      //     ),
+      // },
+      // {
+      //   path: 'AdminProduct',
+      //   loadComponent: () =>
+      //     import (
+      //       './admin-crud/admin-crud.component'
+      //     ).then((m) => m.ProductTableComponent)
+      // }
     ],
+  },
+  {
+    path: 'app-notifications',
+    loadComponent: () =>
+      import('./admin-dashboard/notifications/notifications.component').then(
+        (m) => m.NotificationsComponent
+      ),
   },
 
   {
-    path: 'Customers',
+    path: 'app-sales',
+    loadComponent: () =>
+      import('./admin-dashboard/sales/sales.component').then(
+        (m) => m.SalesComponent
+      ),
+  },
+  {
+    path: 'app-admin-crud',
+    loadComponent: () =>
+      import('./admin-crud/admin-crud.component').then(
+        (m) => m.ProductTableComponent
+      ),
+  },
+  {
+    path: 'app-customers',
     component: CustomersComponent,
   },
 
@@ -98,6 +126,7 @@ export const routes: Routes = [
     path: 'app-admin-crud',
     component: ProductTableComponent,
   },
+
   {
     path: 'app-product-add',
     component: ProductAddComponent,

@@ -91,3 +91,32 @@
     color: cadetblue;
 }
  
+
+
+.follow{
+    margin-top: 200px;
+ }
+ 
+ .heading{
+    font-size: 60px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 60px;
+ 
+ }
+ 
+ .para{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 60px;
+    font-size: 40px;
+    margin-bottom: 150px;
+ }
+ 
+ .images img {
+    width: 200px; 
+    height: 300px; 
+    margin-left: 60px;
+    border-radius: 10px; 
+    margin-bottom: 150px;
+    display: inline-block;
+ }
