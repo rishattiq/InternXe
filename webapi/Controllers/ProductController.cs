@@ -46,7 +46,7 @@ namespace EcommerceApp.Controllers
         {
             var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
-                return NotFound();
+                throw new InvalidOperationException("Product not found");
             return Ok(product);
         }
 
@@ -59,8 +59,40 @@ namespace EcommerceApp.Controllers
         [HttpPost("addproduct")]
         public async Task<IActionResult> AddProduct(Product product)
         {
-            await _productService.AddProductAsync(product);
-            return Ok();
+            try
+            {
+                // Validate Product Name
+                if (string.IsNullOrWhiteSpace(product.Name))
+                    throw new ArgumentException("Product name is required.");
+
+                // Validate Price
+                if (product.Price <= 0)
+                    throw new ArgumentOutOfRangeException(nameof(product.Price), "Price must be a positive value.");
+
+                // Validate Quantity
+                if (product.Quantity < 0)
+                    throw new ArgumentOutOfRangeException(nameof(product.Quantity), "Quantity cannot be negative.");
+
+                // Validate Rating
+                if (product.Rating < 1 || product.Rating > 5)
+                    throw new ArgumentOutOfRangeException(nameof(product.Rating), "Rating must be between 1 and 5.");
+
+                // Validate CreatedAt (Cannot be in the future)
+                if (product.CreatedAt > DateTime.Now)
+                    throw new ArgumentOutOfRangeException(nameof(product.CreatedAt), "CreatedAt cannot be in the future.");
+
+                // If all validations pass, proceed to add the product
+                await _productService.AddProductAsync(product);
+                return Ok();
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message); // Return 400 Bad Request with the error message
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         // PUT: api/product/updateproductbyid/{id}

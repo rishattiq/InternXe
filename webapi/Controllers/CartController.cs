@@ -19,8 +19,23 @@ namespace webapi.Controllers
         [HttpPost("addtocart")]
         public async Task<IActionResult> AddToCart(AddToCartRequest request)
         {
-            await _cartService.AddToCartAsync(request.CustomerId, request.ProductId, request.Quantity);
-            return Ok();
+            try
+            {
+                await _cartService.AddToCartAsync(request.CustomerId, request.ProductId, request.Quantity);
+                return Ok(new { Message = "Product added to cart successfully." });
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Error = ex.Message });
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(new { Error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = ex.Message });
+            }
         }
 
         // GET: api/cart/getcartsbycustomerid/{customerId}
