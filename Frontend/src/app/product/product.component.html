@@ -1,28 +1,28 @@
-
-<h1 class="tw-font-serif tw-bg-green-50 tw-text-green-500 text-center p-5 tw-text-5xl">ALL-PRODUCTS</h1>
-
-
-
-<header class=" tw-font-medium tw-header tw-z-50 tw-sticky tw-top-0 tw-bg-green-200 tw-shadow-md  tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-02">
+<h1 class="tw-pt-8 tw-text-6xl tw-font-bold tw-text-center tw-text-gray-800 tw-mb-4 tw-transition tw-transform tw-duration-500 tw-ease-in-out hover:tw-scale-110 ">
+  <span class="tw-bg-gradient-to-r tw-from-pink-500 tw-to-yellow-500 tw-text-transparent tw-bg-clip-text tw-font-dancing">
+    Our Products
+  </span>
+</h1>
+<br>
+<header class=" tw-mt-2 tw-font-medium tw-header tw-z-50 tw-sticky tw-top-0 tw-bg-gray-300 tw-shadow-md  tw-flex tw-items-center tw-justify-between tw-px-8 tw-py-02">
   <!-- logo -->
- 
+
 
   <!-- navigation -->
   <nav class="tw-nav tw-font-semibold tw-text-lg ">
-      <ul class="tw-flex tw-items-center tw-ml-12  tw-text-xl tw-space-x-12">
-        @for (item of categoryList; track $index) {
-          <li class="tw-p-4 tw-border-b-2 tw-border-green-500 tw-border-opacity-0 hover:tw-border-opacity-100 hover:tw-text-green-500 tw-duration-200 tw-cursor-pointer tw-active" (click)="categoryFilter(item)">
-            <a >{{item}}</a>
-          </li>
-        }
-       
-          
-      
-      </ul>
+    <ul class="tw-flex tw-items-center tw-ml-12 tw-text-xl tw-space-x-12">
+      @for (item of categoryList; track $index) {
+        <li class="tw-p-4 tw-border-b-2 tw-border-green-500 tw-border-opacity-0 hover:tw-border-opacity-100 hover:tw-text-green-500 tw-duration-200 tw-cursor-pointer tw-active" >
+          <a class="tw-font-pacifico" (click)="categoryFilter(item)">{{item}}</a>
+        </li>
+      }
+    </ul>
   </nav>
+  
 
+  <!-- //complaint -->
   <button
-  class="tw-select-none tw-rounded-lg tw-bg-red-500 tw-py-3 tw-px-6 tw-text-center tw-align-middle tw-font-sans tw-text-xs tw-font-bold tw-uppercase tw-text-white tw-shadow-md tw-shadow-red-500/20 tw-transition-all hover:tw-shadow-lg hover:tw-shadow-red-500/40 focus:tw-opacity-[0.85] focus:tw-shadow-none active:tw-opacity-[0.85] active:tw-shadow-none disabled:tw-pointer-events-none disabled:tw-opacity-50 disabled:tw-shadow-none" (click)="feedBack()"
+  class=" tw-select-none tw-rounded-lg tw-bg-red-500 tw-py-3 tw-px-6 tw-text-center tw-align-middle tw-font-sans tw-text-xs tw-font-bold tw-uppercase tw-text-white tw-shadow-md tw-shadow-red-500/20 tw-transition-all hover:tw-shadow-lg hover:tw-shadow-red-500/40 focus:tw-opacity-[0.85] focus:tw-shadow-none active:tw-opacity-[0.85] active:tw-shadow-none disabled:tw-pointer-events-none disabled:tw-opacity-50 disabled:tw-shadow-none" (click)="feedBack()"
   type="button"
 >
   File a Complaint
@@ -59,7 +59,8 @@
             <div class="tw-flex tw-h-full tw-flex-col tw-overflow-y-scroll tw-bg-white tw-shadow-xl">
               <div class="tw-flex-1 tw-overflow-y-auto tw-px-4 tw-py-6 sm:tw-px-6">
                 <div class="tw-flex tw-items-start tw-justify-between">
-                  <h2 class="tw-text-lg tw-font-medium tw-text-gray-900" id="slide-over-title">Shopping cart</h2>
+                  <h2 class="tw-text-2xl tw-font-extrabold tw-text-gray-900 tw-mb-6" id="slide-over-title">Shopping cart</h2>
+
                   <div class="tw-ml-3 tw-flex tw-h-7 tw-items-center">
                     <button type="button" class="tw-relative tw--m-2 tw-p-2 tw-text-gray-400 hover:tw-text-gray-500" (click)="closeCartList()">
                       <span class="tw-absolute tw--inset-0.5"></span>
@@ -74,56 +75,70 @@
                 <div class="tw-mt-8">
                   <div class="tw-flow-root">
                     <ul role="list" class="tw--my-6 tw-divide-y tw-divide-gray-200">
-                      <li class="tw-flex tw-py-6">
-                        <div class="tw-h-24 tw-w-24 tw-flex-shrink-0 tw-overflow-hidden tw-rounded-md tw-border tw-border-gray-200">
-                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                        </div>
+
+
+<!-- //product List in cart -->
+
+@if (productNameListnew.length === 0) {
+  <h1 class="tw-text-2xl tw-font-bold tw-text-red-600 tw-mb-4">Cart is Empty</h1>
+  <button type="button" class="tw-bg-indigo-600 tw-text-white tw-py-2 tw-px-4 tw-rounded-lg hover:tw-bg-indigo-700 focus:tw-outline-none focus:tw-ring-4 focus:tw-ring-indigo-300" (click)="closeCartList()">
+      Shop now 
+      <span aria-hidden="true"> &rarr;</span>
+  </button>
   
-                        <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col">
-                          <div>
-                            <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
-                              <h3>
-                                <a href="#">Throwback Hip Bag</a>
-                              </h3>
-                              <p class="tw-ml-4">$90.00</p>
-                            </div>
-                            <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Salmon</p>
+}@else {
+                      @for (item of productNameListnew; track $index) {
+                       
+                        <li class="tw-flex tw-py-6">
+                          
+                      
+                      
+                          <div class="tw-h-24 tw-w-24 tw-flex-shrink-0 tw-overflow-hidden tw-rounded-md tw-border tw-border-gray-200">
+                            <img src={{item.imageUrl}}>
                           </div>
-                          <div class="tw-flex tw-flex-1 tw-items-end tw-justify-between tw-text-sm">
-                            <p class="tw-text-gray-500">Qty 1</p>
-  
-                            <div class="tw-flex">
-                              <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">Remove</button>
+    
+                          <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col">
+                            <div>
+                              <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
+                                <h3>
+                                  <a href="#">{{item.productName}}</a>
+                                </h3>
+                                @if (item.discount == 0) {
+                                  <p class="tw-ml-4 tw-text-green-600 dark:tw-text-black tw-font-bold tw-text-gray-900 dark:tw-text-black">${{item.price}}</p>
+                                }
+                                @else {
+                                  <p class="tw-ml-4 tw-text-red-600 dark:tw-text-red tw-line-through">${{item.price}}</p>
+                                  <p class="tw-ml-4 tw-text-green-600 dark:tw-text-black tw-font-bold tw-text-gray-900 dark:tw-text-black ">${{(item.price - (item.price * (item.discount / 100))).toFixed(2) }}</p>
+                                
+                                }
+                               
+                                
+                               
+                               
+                              </div>
+                              @if (item.discount == 0) {
+                                <p class="tw-mt-1 tw-text-sm tw-text-gray-500">{{item.category}}</p>
+                                <p class=" tw-font-bold tw-mt-1 tw-text-sm tw-text-red-500">No discount</p>
+                              }@else {
+                                <p class="tw-mt-1 tw-text-sm tw-text-gray-500">{{item.category}}</p>
+                                <p class="tw-mt-1 tw-text-sm tw-text-green-500">Discount:{{item.discount}}%</p>
+                              }
+                              
+                              
+                            </div>
+                            <div class="tw-flex tw-flex-1 tw-items-end tw-justify-between tw-text-sm">
+                              <p class="tw-text-gray-500">Qty 1</p>
+    
+                              <div class="tw-flex">
+                                <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500" (click)="removeItemFromTheCart(item.productId)">Remove</button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </li>
-                      <li class="tw-flex tw-py-6">
-                        <div class="tw-h-24 tw-w-24 tw-flex-shrink-0 tw-overflow-hidden tw-rounded-md tw-border tw-border-gray-200">
-                          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="tw-h-full tw-w-full tw-object-cover tw-object-center">
-                        </div>
-  
-                        <div class="tw-ml-4 tw-flex tw-flex-1 tw-flex-col">
-                          <div>
-                            <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
-                              <h3>
-                                <a href="#">Medium Stuff Satchel</a>
-                              </h3>
-                              <p class="tw-ml-4">$32.00</p>
-                            </div>
-                            <p class="tw-mt-1 tw-text-sm tw-text-gray-500">Blue</p>
-                          </div>
-                          <div class="tw-flex tw-flex-1 tw-items-end tw-justify-between tw-text-sm">
-                            <p class="tw-text-gray-500">Qty 1</p>
-  
-                            <div class="tw-flex">
-                              <button type="button" class="tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">Remove</button>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-  
-                      <!-- More products... -->
+                        </li>
+                      }
+                    }
+                      
+                    
                     </ul>
                   </div>
                 </div>
@@ -131,8 +146,8 @@
   
               <div class="tw-border-t tw-border-gray-200 tw-px-4 tw-py-6 sm:tw-px-6">
                 <div class="tw-flex tw-justify-between tw-text-base tw-font-medium tw-text-gray-900">
-                  <p>Subtotal</p>
-                  <p>$262.00</p>
+                  <p class="tw-text-lg tw-font-bold tw-text-indigo-600">Subtotal</p>
+                  <p class=" tw-font-bold tw-text-xl tw-ml-4 tw-text-green-600 dark:tw-text-black tw-font-bold tw-text-gray-900 dark:tw-text-black">${{subtotal.toFixed(2)}}</p>
                 </div>
                 <p class="tw-mt-0.5 tw-text-sm tw-text-gray-500">Shipping and taxes calculated at checkout.</p>
                 <div class="tw-mt-6">
@@ -172,16 +187,12 @@
         No <mark class=" tw-mt-4 tw-px-2 tw-text-white tw-bg-blue-600 tw-rounded dark:tw-bg-blue-500">Product</mark> for this category
       </h1>
     </div>
- 
-    
-    
-
 
   }
   @else {
     @for (item of newProductListForFilterVar; track $index) {
    
-      <app-card-product [addTOcartFunc]="addToCart.bind(this)" [Product]="item"></app-card-product>
+      <app-card-product [addTOcartFunc]="addToCart.bind(this)"  [Product]="item"></app-card-product>
      
     
   
@@ -198,7 +209,7 @@
 
 
 
-          
+<app-footer></app-footer>
 
  
 

@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 
-
 import { ProductComponent } from './product/product.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-
 
 import { RegisterLoginComponent } from './register-login/register-login.component';
 
@@ -19,35 +17,31 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { CheckoutComponent } from './product/checkout/checkout.component';
 
 import { FeedbackComponent } from './product/feedback/feedback.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 export const routes: Routes = [
-
-  { 
-    path: '', 
+  {
+    path: '',
     component: RegisterLoginComponent,
-    pathMatch: 'full'
-  
+    pathMatch: 'full',
   },
-    {
-        path: "home",
-        component: HomeComponent
-    },
-    {
-        path: "app-feedback",
-        component: FeedbackComponent
-    },
-  
-    {
-        path: 'Product',
-        component: ProductComponent,   
-    },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'app-feedback',
+    component: FeedbackComponent,
+  },
 
-    
+  {
+    path: 'Product',
+    component: ProductComponent,
+  },
 
   {
     path: 'About',
     component: AboutComponent,
-  
   },
   {
     path: 'Contact',
@@ -86,8 +80,6 @@ export const routes: Routes = [
     component: CustomersComponent,
   },
 
-
-
   {
     path: 'Invoice',
     component: InvoiceComponent,
@@ -97,6 +89,11 @@ export const routes: Routes = [
     path: 'app-checkout',
     component: CheckoutComponent,
   },
+  {
+    path: 'app-product-detail',
+    component: ProductDetailComponent,
+  },
+
   {
     path: 'app-admin-crud',
     component: ProductTableComponent,

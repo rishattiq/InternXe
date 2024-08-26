@@ -4,6 +4,7 @@ import { CardProductComponent } from './card-product/card-product.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-product',
@@ -15,40 +16,27 @@ import { CommonModule } from '@angular/common';
     FeedbackComponent,
     FormsModule,
     CommonModule,
+    FooterComponent,
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
 export class ProductComponent {
   categoryList = ['All-Products', 'Shoes', 'T-Shirts', 'Jeans', 'Bags'];
-  // prdocutlist2 = [
-  //   {
-  //     productId: 1,
-  //     rating: 4,
-  //     isOffer: true,
-  //     quantity: 11,
-  //     productName: 'Nike TurboFlex 3000',
-  //     category: 'Shoes',
-  //     price: 1050,
-  //     discount: 10,
-  //     availability: true,
-  //     imageUrl:
-  //       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQGNXqEgY63RQ9WmYDGpjmXAEEjABiBqBHBg&s',
-  //   },
-  // ];
+
   productList = [
     {
       productId: 1,
       rating: 4,
       isOffer: true,
-      quantity: 11,
-      productName: 'Nike TurboFlex 3000',
+      quantity: 'HIGH',
+      productName: 'Reebok Classic Leather',
       category: 'Shoes',
       price: 1050,
       discount: 10,
       availability: true,
       imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQGNXqEgY63RQ9WmYDGpjmXAEEjABiBqBHBg&s',
+        'https://assets.ajio.com/medias/sys_master/root/20240704/lAO8/668730b31d763220fae92916/-473Wx593H-467339243-tan-MODEL2.jpg',
     },
     // {
     //   productId: 1,
@@ -67,122 +55,163 @@ export class ProductComponent {
       productId: 2,
       rating: 3,
       isOffer: false,
-      quantity: 8,
-      productName: 'Eclipse Denim',
-      category: 'Jeans',
+      quantity: 'LOW',
+      productName: 'Nike Air Max 270',
+      category: 'Shoes',
       price: 799,
       discount: 5,
       availability: true,
       imageUrl:
-        'https://assets.ajio.com/medias/sys_master/root/20240430/C6Hk/6630475505ac7d77bb332482/-1117Wx1400H-467162954-black-MODEL.jpg',
+        'https://assets.ajio.com/medias/sys_master/root/20240731/an4z/66aa44d11d763220fa5127ce/-473Wx593H-466345463-white-MODEL2.jpg',
     },
     {
       productId: 3,
       rating: 3,
       isOffer: false,
-      quantity: 0,
-      productName: 'Brown Quantum Henley',
-      category: 'T-Shirts',
+      quantity: '0',
+      productName: 'Brown Sandal RS-X3',
+      category: 'Shoes',
       price: 349,
       discount: 15,
       availability: false,
       imageUrl:
-        'https://www.marni.com/dw/image/v2/AAPK_PRD/on/demandware.static/-/Sites-marni-master-catalog/default/dwd9430673/images/large/HUMU0223X2_UTCZ68_00R10_F.jpg?sw=837&sh=1116',
+        'https://assets.ajio.com/medias/sys_master/root/20230623/W7b5/64957cd3eebac147fcd5f82e/-473Wx593H-465024721-olive-MODEL.jpg',
     },
     {
       productId: 4,
       rating: 5,
       isOffer: true,
-      quantity: 29,
-      productName: 'Nike Horizon X',
+      quantity: 'HIGH',
+      productName: 'Nike Sleeper X',
       category: 'Shoes',
       price: 1199,
       discount: 0,
       availability: true,
       imageUrl:
-        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D',
+        'https://assets.ajio.com/medias/sys_master/root/20240801/4fJl/66ab67f41d763220fa53726a/-473Wx593H-469647360-blue-MODEL2.jpg',
     },
     {
       productId: 5,
       rating: 1,
       isOffer: true,
-      quantity: 3,
+      quantity: 'HIGH',
       productName: 'White Phantom Glide',
-      category: 'Shoes',
+      category: 'T-Shirts',
       price: 89,
       discount: 20,
       availability: true,
       imageUrl:
-        'https://rukminim2.flixcart.com/image/450/500/xif0q/shoe/7/z/r/8-white-leaf-8-urbanbox-white-black-original-imagvgf4cuzs2hrw.jpeg?q=90&crop=true',
+        'https://assets.ajio.com/medias/sys_master/root/20240823/u1ir/66c8060b1d763220fa926019/-473Wx593H-469631435-offwhite-MODEL.jpg',
     },
     {
       productId: 6,
       rating: 4,
       isOffer: false,
-      quantity: 17,
-      productName: 'Black Zenith Casual',
+      quantity: 'LOW',
+      productName: 'Cream Zenith Casual',
       category: 'T-Shirts',
       price: 2399,
       discount: 0,
       availability: true,
       imageUrl:
-        'https://cdn-img.prettylittlething.com/4/3/7/0/43700742a339775e9f9cee8b0acf863ceb14a07b_cmn7259_2.jpg?imwidth=600',
+        'https://assets.ajio.com/medias/sys_master/root/20240822/c1Qn/66c7473e6f60443f3120a182/-473Wx593H-469651736-stone-MODEL.jpg',
     },
     {
       productId: 7,
       rating: 4,
       isOffer: true,
-      quantity: 0,
+      quantity: '0',
       productName: 'Ridge Fade',
-      category: 'Jeans',
+      category: 'T-Shirts',
       price: 149,
       discount: 25,
       availability: false,
       imageUrl:
-        'https://assets.ajio.com/medias/sys_master/root/20240430/C6Hk/6630475505ac7d77bb332482/-1117Wx1400H-467162954-black-MODEL.jpg',
+        'https://assets.ajio.com/medias/sys_master/root/20240822/co8N/66c730b86f60443f311f95c0/-473Wx593H-469647857-oatmeal-MODEL.jpg',
     },
     {
       productId: 8,
       rating: 5,
       isOffer: false,
-      quantity: 7,
-      productName: 'Steel Blue Slims',
-      category: 'Jeans',
+      quantity: 'LOW',
+      productName: 'Steel Sun Yellow-3',
+      category: 'T-Shirts',
       price: 2999,
       discount: 0,
       availability: true,
       imageUrl:
-        'https://www.houseofcalibre.com/wp-content/uploads/2024/02/DC-Men-Classic-Look-Original-Regular-Fit-Denim-Jeans-Pant.jpg',
+        'https://assets.ajio.com/medias/sys_master/root/20240822/vixt/66c753ec6f60443f3120e782/-473Wx593H-469651563-mustard-MODEL.jpg',
     },
     {
       productId: 9,
       rating: 5,
       isOffer: true,
-      quantity: 0,
+      quantity: '0',
       productName: 'Red-Crystal Pulse Lx2',
-      category: 'Shoes',
+      category: 'T-Shirts',
       price: 749,
       discount: 10,
       availability: false,
       imageUrl:
-        'https://images.pexels.com/photos/1240892/pexels-photo-1240892.jpeg?cs=srgb&dl=pexels-mstudio-360817-1240892.jpg&fm=jpg',
+        'https://assets.ajio.com/medias/sys_master/root/20240530/dWhj/6657d50616fd2c6e6a3c851a/-473Wx593H-700023846-beige-MODEL.jpg',
     },
     {
       productId: 10,
       rating: 4,
       isOffer: false,
-      quantity: 12,
-      productName: 'Vanguard Tee',
-      category: 'T-shirts',
+      quantity: 'HIGH',
+      productName: 'Levi 501 Original Fit',
+      category: 'Jeans',
       price: 299,
       discount: 0,
       availability: true,
       imageUrl:
-        'https://ih1.redbubble.net/image.2256653451.7998/ssrco,active_tshirt,womens,101010:01c5ca27c6,front,tall_three_quarter,750x1000.jpg',
+        'https://assets.ajio.com/medias/sys_master/root/20240821/bnor/66c5f35b1d763220fa8bc544/-473Wx593H-469631205-brown-MODEL.jpg',
+    },
+    {
+      productId: 11,
+      rating: 4,
+      isOffer: false,
+      quantity: 'HIGH',
+      productName: 'Wrangler Relaxed Fit',
+      category: 'Jeans',
+      price: 299,
+      discount: 0,
+      availability: true,
+      imageUrl:
+        'https://assets.ajio.com/medias/sys_master/root/20240821/7teO/66c5ed076f60443f311af131/-473Wx593H-469631236-washedblack-MODEL.jpg',
+    },
+    {
+      productId: 12,
+      rating: 4,
+      isOffer: false,
+      quantity: 'HIGH',
+      productName: 'Diesel D-Strukt Slim Fit',
+      category: 'Jeans',
+      price: 299,
+      discount: 0,
+      availability: true,
+      imageUrl:
+        'https://assets.ajio.com/medias/sys_master/root/20240821/zCNt/66c5ed2a1d763220fa8b6c73/-473Wx593H-469631211-lightwashblue-MODEL.jpg',
+    },
+    {
+      productId: 13,
+      rating: 4,
+      isOffer: false,
+      quantity: 'HIGH',
+      productName: 'Gap Vintage Wash Skinny Jeans',
+      category: 'Jeans',
+      price: 299,
+      discount: 0,
+      availability: true,
+      imageUrl:
+        'https://assets.ajio.com/medias/sys_master/root/20240821/Y4xA/66c5efaf1d763220fa8bb242/-473Wx593H-469631237-lightwashblue-MODEL.jpg',
     },
   ];
 
-  newProductListForFilterVar: any[] = [];
+  newProductListForFilterVar: any[] = []; //for filter
+  productNameListnew: any[] = []; //for items in cart
+
   constructor(private router: Router) {
     this.newProductListForFilterVar = this.productList;
   }
@@ -199,11 +228,39 @@ export class ProductComponent {
     }
   }
   //cart fuctionality
-  cartNum: number = 0;
-  addToCart() {
+  cartNum: number = 0; //for cart number 1,2,3 etc
+  subtotal: number = 0; //for total payment in cart
+
+  calculateSubtotal() {
+    this.subtotal = this.productNameListnew.reduce((acc, item) => {
+      const discountedPrice = item.price - item.price * (item.discount / 100);
+      return acc + discountedPrice;
+    }, 0);
+  }
+
+  addToCart(productDataFromcardComp: any) {
     // console.log('CLicked from Home Linked succesfully');
 
     this.cartNum = this.cartNum + 1;
+
+    this.productNameListnew.push(productDataFromcardComp);
+    this.calculateSubtotal();
+
+    // console.log(this.productNameListnew);
+  }
+
+  removeItemFromTheCart(
+    productIdGettingFromFuncParameterfromProductComp: number
+  ) {
+    const index = this.productNameListnew.findIndex(
+      (item) =>
+        (item.productId = productIdGettingFromFuncParameterfromProductComp)
+    );
+    if (index !== -1) {
+      this.productNameListnew.splice(index, 1);
+    }
+    this.calculateSubtotal();
+    this.cartNum = this.cartNum - 1;
   }
 
   feedBack() {

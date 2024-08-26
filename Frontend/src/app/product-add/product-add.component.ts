@@ -15,7 +15,7 @@ interface Product {
   category: string;
   sale: boolean;
   createdAt: Date;
-}   
+}
 @Component({
   selector: 'app-product-add',
   standalone: true,
@@ -37,8 +37,8 @@ export class ProductAddComponent {
     sale: false,
     createdAt: new Date(),
   };
-  apiUrl = 'http://localhost:5079/api/Products/addproduct'; // Replace with your actual API endpoint
-products: any;
+  apiUrl = 'https://744a-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
+  products: any;
   constructor(private http: HttpClient) {}
   addProduct() {
     this.http.post<Product>(this.apiUrl, this.newProduct).subscribe(
