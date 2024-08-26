@@ -4,7 +4,14 @@ export const content = [
   "./src/**/*.{html,ts}",
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    fontFamily: {
+      'dancing': ['"Dancing Script"', 'cursive'],
+      
+      'pacifico': ['"Pacifico"', 'cursive'],
+     
+    },
+  },
 };
 export const plugins = [];
 

@@ -16,11 +16,11 @@ interface Product {
   category: string;
   sale: boolean;
   createdAt: Date;
-}   
+}
 @Component({
   selector: 'app-product-add',
   standalone: true,
-  imports: [CommonModule, FormsModule,RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.css'],
 })
@@ -38,8 +38,8 @@ export class ProductAddComponent {
     sale: false,
     createdAt: new Date(),
   };
-  apiUrl = 'https://744a-39-40-97-214.ngrok-free.app/api/Product/addproduct'; 
-products: any;
+  apiUrl = 'https://744a-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
+  products: any;
   constructor(private http: HttpClient, private router: Router) {}
   addProduct() {
     this.http.post<Product>(this.apiUrl, this.newProduct).subscribe(
@@ -69,7 +69,7 @@ products: any;
     };
   }
 
-  Products(){
-    this.router.navigateByUrl('app-admin-crud')
+  Products() {
+    this.router.navigateByUrl('app-admin-crud');
   }
 }

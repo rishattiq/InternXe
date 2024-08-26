@@ -1,28 +1,33 @@
 
-<!-- <div class= " tw-relative  tw-ml-2 tw-mt-9 tw-w-full tw-max-w-sm tw-bg-gray-500 tw-border tw-border-gray-200 tw-rounded-lg tw-shadow dark:tw-bg-gray-800 dark:tw-border-gray-700"> -->
-    <div class="tw-relative tw-ml-2 tw-mt-9 tw-w-full tw-max-w-sm tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg tw-shadow">
-
+<div class= " tw-relative  tw-ml-2 tw-mt-9 tw-w-full tw-max-w-sm tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg tw-shadow dark:tw-bg-gray-800 dark:tw-border-gray-700">
     @if (Product.isOffer) {
         <div class=" tw-absolute  tw-right-0 tw-transform tw-translate-x-1/3 tw-w-14 tw-h-14 tw-bg-blue-500 tw-text-white tw-flex tw-items-center tw-justify-center tw-rounded-full">
             <span class="tw-text-xs">New </span>
           </div>
     }
-    @if (Product.quantity == 0) {
+    @if (Product.quantity == '0') {
         <div class="tw-mt-20 tw-absolute  tw-left-0 tw-transform tw-translate-y-1/4 tw-w-14 tw-h-14 tw-bg-red-500 tw-text-white tw-flex tw-items-center tw-justify-center tw-rounded-full">
             <span class="tw-text-xs">QT: {{Product.quantity}}</span>
           </div>
-    } @else {
+    } @else if(Product.quantity == 'HIGH'){
         <div class="tw-mt-20 tw-absolute  tw-left-0 tw-transform tw-translate-y-1/4 tw-w-14 tw-h-14 tw-bg-green-500 tw-text-white tw-flex tw-items-center tw-justify-center tw-rounded-full">
+            <!-- <span class="tw-text-xs">QT: {{Product.quantity}}</span> -->
             <span class="tw-text-xs">QT: {{Product.quantity}}</span>
           </div>
+       
     }
-   
+    @else if(Product.quantity == 'LOW'){
+        <div class="tw-mt-20 tw-absolute  tw-left-0 tw-transform tw-translate-y-1/4 tw-w-14 tw-h-14 tw-bg-yellow-500 tw-text-white tw-flex tw-items-center tw-justify-center tw-rounded-full">
+            <!-- <span class="tw-text-xs">QT: {{Product.quantity}}</span> -->
+            <span class="tw-text-xs">QT: {{Product.quantity}}</span>
+          </div>
+      }
  
       
-  <a href="#">
-      <img class="tw-p-8 tw-rounded-t-lg" src={{Product.imageUrl}} alt="product image" />
+  <a class="tw-cursor-pointer">
+      <img class="tw-p-8 tw-rounded-t-lg" (click)="navigateToProductDetail(Product)"  src={{Product.imageUrl}} alt="product image" />
   </a>
-  <div class="tw-px-5 tw-pb-5">
+  <div class="tw-px-5 tw-pb-5" >
       <a href="#">
           <h5 class="tw-text-xl tw-font-semibold tw-tracking-tight tw-text-gray-900 dark:tw-text-black">{{Product.productName}}</h5>
       </a>
@@ -64,6 +69,7 @@
       <div class="tw-flex tw-items-center tw-justify-between">
         <div class="tw-flex tw-flex-col tw-items-start">
             @if (Product.discount == 0) {
+                <span class="tw-text-1xl tw-font-bold tw-text-red-600 dark:tw-text-red ">No discount</span>
                 <span class="tw-text-2xl tw-font-bold tw-text-gray-900 dark:tw-text-black ">${{ Product.price }}</span>
             }@else {
                 <span class="tw-text-1xl tw-font-bold tw-text-red-600 dark:tw-text-red tw-line-through">${{ Product.price }}</span>
@@ -78,10 +84,11 @@
           @if (Product.quantity == 0) {
             <a  class="tw-hover:cursor-not-allowed tw-hover:pointer-events-none tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 tw-font-medium tw-rounded-lg tw-text-sm tw-px-5 tw-py-2.5 tw-text-center dark:tw-bg-red-600 dark:hover:tw-bg-red-700 dark:focus:tw-ring-red-800" >Out of Stock</a>
           } @else {
-            <a  class="tw-text-white tw-bg-blue-700 hover:tw-bg-blue-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-blue-300 tw-font-medium tw-rounded-lg tw-text-sm tw-px-5 tw-py-2.5 tw-text-center dark:tw-bg-blue-600 dark:hover:tw-bg-blue-700 dark:focus:tw-ring-blue-800 tw-cursor-pointer" (click)="addTOcartFunc()" >Add to cart</a>
+            <a  class="tw-text-white tw-bg-blue-700 hover:tw-bg-blue-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-blue-300 tw-font-medium tw-rounded-lg tw-text-sm tw-px-5 tw-py-2.5 tw-text-center dark:tw-bg-blue-600 dark:hover:tw-bg-blue-700 dark:focus:tw-ring-blue-800 tw-cursor-pointer" (click)="addTOcartFunc(Product)" >Add to cart</a>
           }
           
       </div>
   </div>
 </div>
 
+<router-outlet></router-outlet>
