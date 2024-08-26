@@ -75,6 +75,7 @@ export class NotificationsComponent {
   Complaints() {
     this.userservice.get_complaints().subscribe((data: any) => {
       this.messages = data;
+      console.log(data)
       this.statusList = this.messages.map(() => 'Pending'); 
     });
   }

@@ -5,6 +5,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-product',
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     CommonModule,
     FooterComponent,
+    NavbarComponent
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',

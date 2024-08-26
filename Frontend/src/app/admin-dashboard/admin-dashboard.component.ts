@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -11,12 +12,34 @@ import {Router, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AdminDashboardComponent {
 
-  constructor(private router: Router){
+  totalOrders: number = 0;
+
+  totalUsers: number = 0;
+  
+  constructor(private router: Router, private http: HttpClient){
 
   }
 
-
+  ngOnInit(): void {
+    this.fetchOrders();
+    this.fetchUsers();
+  }
   
+  fetchOrders(): void {
+    this.http.get<any[]>('https://744a-39-40-97-214.ngrok-free.app/api/Order/getallorders').subscribe(data => {
+      // Assuming the API returns an array of orders
+      this.totalOrders = data.length; // Total number of orders
+    });
+  }
+
+  fetchUsers(): void {
+    this.http.get<any[]>('https://api.example.com/users').subscribe(data => {
+      // Assuming the API returns an array of users
+      this.totalUsers = data.length; // Total number of users
+    });
+  }
+
+
 
   Admin(){
     this.router.navigateByUrl('app-admin-dashboard')

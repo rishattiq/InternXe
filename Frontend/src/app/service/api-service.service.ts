@@ -10,9 +10,9 @@ export class APIService {
   onLogin(loginObj: any) {
     return this.http.post("https://jsonplaceholder.typicode.com/users", loginObj);
   }
-
+ 
   get_userList(){
-    return this.http.get("https://744a-39-40-97-214.ngrok-free.app/api/Customer/getallcustomers")
+    return this.http.get("https://476d-39-40-97-214.ngrok-free.app/api/Customer/getallcustomersfree.app/api/Customer/getallcustomers")
   }
 
   
@@ -36,7 +36,7 @@ export class APIService {
   }
 
   get_complaints(){
-    return this.http.get("https://744a-39-40-97-214.ngrok-free.app/api/Contact/getallmessages")
+    return this.http.get("https://476d-39-40-97-214.ngrok-free.app/api/Contact/getallmessages")
   }
 
 

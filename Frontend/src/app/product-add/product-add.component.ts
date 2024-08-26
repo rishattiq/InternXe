@@ -38,7 +38,7 @@ export class ProductAddComponent {
     sale: false,
     createdAt: new Date(),
   };
-  apiUrl = 'https://744a-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
+  apiUrl = 'https://476d-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
   products: any;
   constructor(private http: HttpClient, private router: Router) {}
   addProduct() {

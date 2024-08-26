@@ -26,7 +26,7 @@ interface Product {
 })
 export class ProductTableComponent implements OnInit {
   products: Product[] = [];
-  apiUrl = 'https://724c-39-40-5-153.ngrok-free.app/api/Product/getallproducts'; // API endpoint for fetching products
+  apiUrl = 'https://476d-39-40-97-214.ngrok-free.app/api/Product/getallproducts'; // API endpoint for fetching products
   deleteUrl = 'https://localhost:5079/api/Products/deleteproductbyid'; // Change to HTTPS as well
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -36,8 +36,10 @@ export class ProductTableComponent implements OnInit {
   }
 
   fetchProducts() {
+    debugger
     this.http.get<Product[]>(this.apiUrl, { responseType: 'json' }).subscribe(
       (products) => {
+        debugger
         this.products = products;
       },
       (error: HttpErrorResponse) => {
