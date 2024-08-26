@@ -1,42 +1,4 @@
-<!-- 
 
-    <div class="top">
-        <header class="header">
-            <h1>Customer Details</h1>
-        </header>
-        
-        <div class="table">
-            <table>
-                <thead>
-                    <tr class="tablehead">
-                        <th scope="col">#</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <tr *ngFor="let item of userlist; let index = index">
-                            <th>{{ index + 1 }}</th>
-                            <td>{{ item.username }}</td>
-                            <td>{{ item.email }}</td>
-                            <td>{{ item.password }}</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm" (click)="onDelete(item.id)">
-                                    Delete
-                                </button>
-                    </tr>
-                  
-                </tbody>
-            </table>
-        </div>
-    </div>
- -->
- 
-        
-  
  
     <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
     <div class="sidebar">
@@ -71,7 +33,7 @@
                    
                      <tr>
                       <tr *ngFor="let item of userlist; let index = index">
-                          <th>{{ index + 1 }}</th>
+                          <th>{{ item.id }}</th>
                           <td>  
                                    
                                     <div class="fw-bold"> <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Profile Image" class="profile-img">{{item.username}}</div>

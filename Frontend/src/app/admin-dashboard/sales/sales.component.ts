@@ -16,19 +16,39 @@ export class SalesComponent {
 
   
   userservice = inject(APIService);
-  userlist: any[] = [];
+  orderlist: any[] = [];
 
   constructor(private router:Router) {}
 
   ngOnInit() {
-    this.userList();
+    this.Orders();
   }
 
-  userList() {
-    this.userservice.get_userList().subscribe((data: any) => {
-      this.userlist = data;
+  // Orders() {
+  //   this.userservice.get_orders().subscribe((data: any) => {
+  //     console.log(data)
+  //     this.orderlist = data;
+  //   });
+  // }
+  Orders() {
+    this.userservice.get_orders().subscribe({
+      next: (data: any) => {
+        console.log('Orders data:', data);
+        this.orderlist = data;
+      },
+      error: (error: any) => {
+        console.error('Error fetching orders:', error);
+        if (error.status === 200 && typeof error.error.text === 'string') {
+          console.log('Received HTML instead of JSON:', error.error.text);
+        } else {
+          // Handle other types of errors
+          console.error('Error:', error.message);
+        }
+      }
     });
   }
+  
+  
   Admin(){
     this.router.navigateByUrl('app-admin-dashboard')
   }

@@ -33,16 +33,16 @@
      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of userlist; let index = index">
+        <tr *ngFor="let item of orderlist; let index = index">
             
                 <td class="col">{{ index + 1 }}</td>
-                <td>{{ item.username }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.username }}</td>
-                <td>{{ item.username }}</td>
-                <td>{{ item.id }}</td>
-                <td>{{ item.id}}</td>
-                <td>{{ item.id }}</td>
+                <td>{{ item.orderId }}</td>
+                <td>{{ item.customerUsername }}</td>
+                <td>{{ item.orderDate }}</td>
+                <td>{{ item.grandTotal }}</td>
+                <td>{{ item.productName }}</td>
+                <td>{{ item.price}}</td>
+                <td>{{ item.quantity }}</td>
                
         
        
