@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PMYLS\\Documents\\InternXe\\webapi\\webapi.csproj": {}
+    "C:\\Users\\user\\OneDrive\\Desktop\\InternXe\\webapi\\webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PMYLS\\Documents\\InternXe\\webapi\\webapi.csproj": {
+    "C:\\Users\\user\\OneDrive\\Desktop\\InternXe\\webapi\\webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PMYLS\\Documents\\InternXe\\webapi\\webapi.csproj",
+        "projectUniqueName": "C:\\Users\\user\\OneDrive\\Desktop\\InternXe\\webapi\\webapi.csproj",
         "projectName": "webapi",
-        "projectPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\webapi\\webapi.csproj",
-        "packagesPath": "C:\\Users\\PMYLS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PMYLS\\Documents\\InternXe\\webapi\\obj\\",
+        "projectPath": "C:\\Users\\user\\OneDrive\\Desktop\\InternXe\\webapi\\webapi.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\OneDrive\\Desktop\\InternXe\\webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PMYLS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -87,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
