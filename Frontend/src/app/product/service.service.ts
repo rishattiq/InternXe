@@ -13,4 +13,16 @@ export class ServiceService {
     return this.selectedProduct;
   }
   constructor() {}
+
+  customerId: number = 0;
+
+  setCustomerId(id: number) {
+    this.customerId = id;
+    localStorage.setItem('customerid', id.toString());
+  }
+
+  getCustomerId(): number | null {
+    this.customerId = Number(localStorage.getItem('customerid'));
+    return this.customerId;
+  }
 }

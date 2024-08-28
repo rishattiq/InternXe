@@ -285,3 +285,4 @@ C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\refint\webapi.dll
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\webapi.pdb
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\webapi.genruntimeconfig.cache
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\ref\webapi.dll
+C:\Users\PMYLS\Documents\InternXe\webapi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

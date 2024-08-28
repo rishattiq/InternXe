@@ -1,112 +1,112 @@
 
 .space{
-    margin-left: 250px;
+  margin-left: 250px;
 }
-  .heading{
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-    margin: 20px;
+.heading{
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin: 20px;
 }
 
 .header{
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
-    background-color: #f8f9fa; 
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f8f9fa;
 }
 
 
 .sidebar {
-    width: 240px;
-    background-color: #343a40;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    height: 100%;
-    transition: transform 0.3s ease;
+  width: 240px;
+  background-color: #343a40;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
 .sidebar.active {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .sidebar-toggle {
-    display: none;
-    font-size: 24px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-    cursor: pointer;
-    background-color: #131313;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+  display: none;
+  font-size: 24px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: #131313;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .sidebar .logo h2 {
-    color: #fffefb;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 45px;
-    font-style: italic;
+  color: #fffefb;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 45px;
+  font-style: italic;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar ul li {
-    padding: 10px 0;
-    font-size: 25px;
-    border-bottom: 1px solid #495057;
-    margin-top: 50px;
+  padding: 10px 0;
+  font-size: 25px;
+  border-bottom: 1px solid #495057;
+  margin-top: 50px;
 }
 
 .sidebar ul li:hover {
-    background-color: #495057;
-    cursor: pointer;
+  background-color: #495057;
+  cursor: pointer;
 }
-  .table { 
-    
-    width: 100%;
-    height: 100%;
-    border-collapse: collapse; 
-  }
- 
-  .table th
-  { 
-    
-    border-color: rgb(31, 30, 30);
-    padding: 0.5rem 2rem;
-    background-color: #f8f9fa; 
-  }
+.table {
 
- 
- 
-  .table td { 
-    border-style: none solid; 
-    vertical-align: top; 
-    border: 2px;
-    
-    border: solid thin;
-    border-color: rgb(232, 232, 232);
-    padding: 1rem;
-  }
-  .table th { 
-    padding: 0.2em; 
-    vertical-align: middle; 
-    text-align: center; 
-  }
-  
-  .table tbody td:first-child::after { 
-    content: leader(". "); 
-  }
-  
-  body {
-    padding: 1rem;
-  }
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.table th
+{
+
+  border-color: rgb(31, 30, 30);
+  padding: 0.5rem 2rem;
+  background-color: #f8f9fa;
+}
+
+
+
+.table td {
+  border-style: none solid;
+  vertical-align: top;
+  border: 2px;
+
+  border: solid thin;
+  border-color: rgb(232, 232, 232);
+  padding: 1rem;
+}
+.table th {
+  padding: 0.2em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table tbody td:first-child::after {
+  content: leader(". ");
+}
+
+body {
+  padding: 1rem;
+}

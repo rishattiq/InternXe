@@ -51,7 +51,7 @@ public class CustomerController : ControllerBase
         }
 
         // Successful login
-        return Ok("Login successful.");
+        return Ok(customer.Id);
     }
 
     // Get all customers API

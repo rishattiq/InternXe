@@ -1,27 +1,60 @@
 <div class="s">
-	<div class="main">
-	  <input type="checkbox" id="chk" aria-hidden="true">
-  
-	  <div class="signup">
-		<form [formGroup]="registerForm" (ngSubmit)="onSignup()">
-		  <label for="chk" aria-hidden="true">Sign up</label>
-		  <input type="text" formControlName="username" placeholder="User name" required>
-		  <input type="email" formControlName="email" placeholder="Email" required>
-		  <input type="password" formControlName="password" placeholder="Password" required>
-		  <input type="password" formControlName="confirmpassword" placeholder="ConfirmPassword" required>
-		  <button type="submit" onclick="onSignup()">Sign up</button>
-		</form>
-	  </div>
-  
-	  <div class=" login">
-		<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-		  <label for="chk" aria-hidden="true">Login</label>
-		  <input type="text" formControlName="username" placeholder="Username" required>
-		  <input type="password" formControlName="password" placeholder="Password" required>
-		  <button type="submit" onclick="onLogin()">Login</button>
-		</form>
-	  </div>
-	</div>
+  <div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="signup">
+      <form [formGroup]="registerForm" (ngSubmit)="onSignup()">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text" formControlName="username" placeholder="User name">
+        <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error">
+          <small>User name is required</small>
+        </div>
+
+        <input type="email" formControlName="email" placeholder="Email">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+          <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</small>
+          <small *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</small>
+        </div>
+
+        <input type="password" formControlName="password" placeholder="Password">
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+          <small>Password is required</small>
+        </div>
+
+        <input type="password" formControlName="confirmpassword" placeholder="Confirm Password">
+        <div *ngIf="registerForm.get('confirmpassword')?.invalid && registerForm.get('confirmpassword')?.touched"
+          class="error">
+          <small>Confirm Password is required</small>
+        </div>
+        <div *ngIf="passwordMismatch && registerForm.get('confirmpassword')?.touched" class="error">
+          <small>Passwords do not match</small>
+        </div>
+
+        <button type="submit" [disabled]="registerForm.invalid || passwordMismatch">Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="text" formControlName="username" placeholder="Username">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
+          <small>Username is required</small>
+        </div>
+
+        <input type="password" formControlName="password" placeholder="Password">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+          <small>Password is required</small>
+        </div>
+
+        <div *ngIf="loginError" class="error">
+          <small>Invalid username or password</small>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </div>
   </div>
+</div>
 
 <router-outlet></router-outlet>

@@ -1,196 +1,200 @@
-
-
 <app-navbar></app-navbar>
 <div class="tw-container tw-my-12 tw-mx-auto tw-px-2 md:tw-px-4">
 
   <section class="tw-mb-32">
 
-        <div class="tw-flex tw-justify-center">
-            <div class="tw-text-center md:tw-max-w-xl lg:tw-max-w-3xl">
-                <h2 class="tw-mb-12 tw-px-6 tw-text-4xl tw-font-bold">
-                    Contact us
-                </h2>
-            </div>
-        </div>
+    <div class="tw-flex tw-justify-center">
+      <div class="tw-text-center md:tw-max-w-xl lg:tw-max-w-3xl">
+        <h2 class="tw-mb-12 tw-px-6 tw-text-4xl tw-font-bold">
+          Contact us
+        </h2>
+      </div>
+    </div>
 
     <div class="tw-flex tw-flex-wrap">
 
-      <form
+      <form (ngSubmit)="ContactForm()"
         class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-px-3 lg:tw-mb-0 lg:tw-w-5/12 lg:tw-px-6">
 
-                <div class="tw-mb-3 tw-w-full">
-                    <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
-                            Name
-                    </label>
-                    <input type="text" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md" id="exampleInput90" placeholder="Name" />
-                </div>
+        <div class="tw-mb-3 tw-w-full">
+          <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
+            Name
+          </label>
+          <input type="text" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md"
+            id="exampleInput90" placeholder="Name" name="name" [(ngModel)]="contact.name" />
+        </div>
 
-                <div class="tw-mb-3 tw-w-full">
-                    <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
-                            Email
-                    </label>
-                    <input type="email" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md" id="exampleInput90"
-                            placeholder="Enter your email address" />
-                </div>
+        <div class="tw-mb-3 tw-w-full">
+          <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
+            Email
+          </label>
+          <input type="email" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md"
+            id="exampleInput90" placeholder="Enter your email address" name="email" [(ngModel)]="contact.email" />
+        </div>
 
-                <div class="tw-mb-3 tw-w-full">
-                    <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
-                            Message
-                    </label>
-                    <textarea class="tw-px-2 tw-py-2 tw-border tw-rounded-[5px] tw-w-full tw-outline-none" name="" id=""></textarea>
-                </div>
+        <div class="tw-mb-3 tw-w-full">
+          <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
+            Message
+          </label>
+          <textarea class="tw-px-2 tw-py-2 tw-border tw-rounded-[5px] tw-w-full tw-outline-none" name="mesage"
+            [(ngModel)]="contact.message"></textarea>
+        </div>
 
-                <button type="button"
-                        class="tw-mb-6 tw-inline-block tw-w-full tw-rounded tw-bg-teal-400 tw-px-6 tw-py-2.5 tw-text-1.5xl tw-uppercase tw-leading-normal tw-text-white hover:tw-shadow-md hover:tw-bg-teal-500">
-                        Send
-                </button>
+        <button type="button" style="background-color: #f1000058;" (click)="ContactForm()"
+          class="tw-mb-6 tw-inline-block tw-w-full tw-rounded tw-bg-teal-400 tw-px-6 tw-py-2.5 tw-text-1.5xl tw-uppercase tw-leading-normal tw-text-white hover:tw-shadow-md hover:tw-bg-teal-500">
+          Send
+        </button>
 
       </form>
 
-            <div class="tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto lg:tw-w-7/12">
-                <div class="tw-flex tw-flex-wrap">
-                    <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
-                        <div class="tw-flex tw-items-start">
-                            <div class="tw-shrink-0">
-                                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="tw-h-8 tw-w-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="tw-ml-6 tw-grow">
-                                <p class="tw-mb-2 tw-font-bold tw-text-lg">
-                                    Technical support
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    support+example.com
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    +1 234-567-89
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
-                        <div class="tw-flex tw-items-start">
-                            <div class="tw-shrink-0">
-                                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="tw-h-8 tw-w-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="tw-ml-6 tw-grow">
-                                <p class="tw-mb-2 tw-font-bold tw-text-lg">
-                                    Sales questions
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    sales+example.com
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    +1 234-567-89
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
-                        <div class="tw-align-start tw-flex">
-                            <div class="tw-shrink-0">
-                                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="tw-h-8 tw-w-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25m-4.5-13.5h0A2.25 2.25 0 0012 4.5h-9A2.25 2.25 0 00.75 6.75v12.75h0A2.25 2.25 0 003 21.75h15M9 18.75v0M9 18.75h0M9 18.75h0" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="tw-ml-6 tw-grow">
-                                <p class="tw-mb-2 tw-font-bold tw-text-lg">
-                                    Press
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    press+example.com
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    +1 234-567-89
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
-                        <div class="tw-align-start tw-flex">
-                            <div class="tw-shrink-0">
-                                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" class="tw-h-8 tw-w-8">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M21.75 7.5l-.504-2.015A2.25 2.25 0 0019.028 3.75h-3.058c-1.04 0-1.918.737-2.217 1.75l-.754 2.637a2.25 2.25 0 01-2.12 1.613H3.75m0 0a2.25 2.25 0 00-2.24 2.024l-.481 6A2.25 2.25 0 003.272 18h14.456a2.25 2.25 0 002.24-2.364l-.481-6A2.25 2.25 0 0017.25 7.5h-4.272M3.75 7.5a2.25 2.25 0 00-2.242 2.05l-.481 6c-.06.745.541 1.45 1.317 1.45h14.453c.778 0 1.378-.707 1.317-1.451l-.48-6A2.25 2.25 0 0017.25 7.5H3.75z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="tw-ml-6 tw-grow">
-                                <p class="tw-mb-2 tw-font-bold tw-text-lg">
-                                    Bug report
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    bugs+example.com
-                                </p>
-                                <p class="tw-text-neutral-500 tw-text-base">
-                                    +1 234-567-89
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto lg:tw-w-7/12">
+        <div class="tw-flex tw-flex-wrap">
+          <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
+            <div class="tw-flex tw-items-start">
+              <div class="tw-shrink-0">
+                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="tw-h-8 tw-w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                  </svg>
                 </div>
+              </div>
+              <div class="tw-ml-6 tw-grow">
+                <p class="tw-mb-2 tw-font-bold tw-text-lg">
+                  Technical support
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  support+example.com
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  +1 234-567-89
+                </p>
+              </div>
             </div>
-            
+          </div>
+          <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
+            <div class="tw-flex tw-items-start">
+              <div class="tw-shrink-0">
+                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="tw-h-8 tw-w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="tw-ml-6 tw-grow">
+                <p class="tw-mb-2 tw-font-bold tw-text-lg">
+                  Sales questions
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  sales+example.com
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  +1 234-567-89
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
+            <div class="tw-align-start tw-flex">
+              <div class="tw-shrink-0">
+                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="tw-h-8 tw-w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25m-4.5-13.5h0A2.25 2.25 0 0012 4.5h-9A2.25 2.25 0 00.75 6.75v12.75h0A2.25 2.25 0 003 21.75h15M9 18.75v0M9 18.75h0M9 18.75h0" />
+                  </svg>
+                </div>
+              </div>
+              <div class="tw-ml-6 tw-grow">
+                <p class="tw-mb-2 tw-font-bold tw-text-lg">
+                  Press
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  press+example.com
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  +1 234-567-89
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-w-6/12 md:tw-px-3 lg:tw-px-6">
+            <div class="tw-align-start tw-flex">
+              <div class="tw-shrink-0">
+                <div class="tw-inline-block tw-rounded-md tw-bg-teal-400-100 tw-p-6 tw-text-teal-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="tw-h-8 tw-w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21.75 7.5l-.504-2.015A2.25 2.25 0 0019.028 3.75h-3.058c-1.04 0-1.918.737-2.217 1.75l-.754 2.637a2.25 2.25 0 01-2.12 1.613H3.75m0 0a2.25 2.25 0 00-2.24 2.024l-.481 6A2.25 2.25 0 003.272 18h14.456a2.25 2.25 0 002.24-2.364l-.481-6A2.25 2.25 0 0017.25 7.5h-4.272M3.75 7.5a2.25 2.25 0 00-2.242 2.05l-.481 6c-.06.745.541 1.45 1.317 1.45h14.453c.778 0 1.378-.707 1.317-1.451l-.48-6A2.25 2.25 0 0017.25 7.5H3.75z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="tw-ml-6 tw-grow">
+                <p class="tw-mb-2 tw-font-bold tw-text-lg">
+                  Bug report
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  bugs+example.com
+                </p>
+                <p class="tw-text-neutral-500 tw-text-base">
+                  +1 234-567-89
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+    </div>
 
   </section>
 
 </div>
 <div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d328415.0449455398!2d73.00937763513451!3d33.68442092021207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df96863e7eb945%3A0x7d4d3a1d450863ff!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1692890597824!5m2!1sen!2sus" 
-        width="100%" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy">
-</iframe>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d328415.0449455398!2d73.00937763513451!3d33.68442092021207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df96863e7eb945%3A0x7d4d3a1d450863ff!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1692890597824!5m2!1sen!2sus"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
 </div>
 
 <div class="follow">
-    <h1 class="heading">Follow Our Instagram</h1>
-    <p class="para">Our official Instagram Account <a href="/" style="color: rgb(49, 49, 122);">&#64;InternXeBrand</a></p>
+  <h1 class="heading">Follow Our Instagram</h1>
+  <p class="para">Our official Instagram Account <a href="/" style="color: rgb(49, 49, 122);">&#64;InternXeBrand</a></p>
 
-    <div class="images">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJ3qAeEpUS_PTP1tjgMis9NT5IM717YRqDg&s" alt="Image 1">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXG85_P9xnPILI3c1rjcDGS4DGgSrdw3zl6Q&s" alt="Image 2">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9QxOu8jWmzr2QgoAIORWr8ZqY9iafVPIvg&s">
-        <img src="https://vibgyorclothing.com.pk/cdn/shop/products/Screenshot_20220807-033429_WhatsApp.jpg?v=1682699877" alt="Image 3">
-        <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/21282946/2024/3/21/f405d9d5-0a6c-47f9-a9df-cafb6c944ca61711010766284-Nestasia-Textured-Structured-Tote-Bag-3591711010765740-1.jpg" alt="Image 4">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTevp8_1q39TckH3IGeivA0zrJqyWRidTdWvw&s">
-        <img src="https://zellbury.com/cdn/shop/files/WBT22E245-Multi-C2.jpg?v=1716542297">
-    </div>
+  <div class="images">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJ3qAeEpUS_PTP1tjgMis9NT5IM717YRqDg&s"
+      alt="Image 1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXG85_P9xnPILI3c1rjcDGS4DGgSrdw3zl6Q&s"
+      alt="Image 2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU9QxOu8jWmzr2QgoAIORWr8ZqY9iafVPIvg&s">
+    <img src="https://vibgyorclothing.com.pk/cdn/shop/products/Screenshot_20220807-033429_WhatsApp.jpg?v=1682699877"
+      alt="Image 3">
+    <img
+      src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/21282946/2024/3/21/f405d9d5-0a6c-47f9-a9df-cafb6c944ca61711010766284-Nestasia-Textured-Structured-Tote-Bag-3591711010765740-1.jpg"
+      alt="Image 4">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTevp8_1q39TckH3IGeivA0zrJqyWRidTdWvw&s">
+    <img src="https://zellbury.com/cdn/shop/files/WBT22E245-Multi-C2.jpg?v=1716542297">
+  </div>
 </div>
 
 <div class="info-bar">
-    <div class="info-item">
-        <img class="image" src="https://static.vecteezy.com/system/resources/previews/014/455/904/original/delivery-truck-icon-icon-on-transparent-background-free-png.png" alt="Free Shipping">
-        <span class="text"><b>Free shipping</b> Over $200</span>
-    </div>
-    <div class="info-item">
-        <img class="image" src="https://pic.onlinewebfonts.com/svg/img_518129.svg" alt="Money Back">
-        <span class="text"><b>Money back</b> Return within 7 days</span>
-    </div>
-    <div class="info-item">
-        <img class="image" src="http://www.socialtalent.co/wp-content/uploads/2015/08/question-mark-512.gif" alt="Questions">
-        <span class="text"><b>Any questions?</b> Experts are ready to answer</span>
-    </div>
+  <div class="info-item">
+    <img class="image"
+      src="https://static.vecteezy.com/system/resources/previews/014/455/904/original/delivery-truck-icon-icon-on-transparent-background-free-png.png"
+      alt="Free Shipping">
+    <span class="text"><b>Free shipping</b> Over $200</span>
+  </div>
+  <div class="info-item">
+    <img class="image" src="https://pic.onlinewebfonts.com/svg/img_518129.svg" alt="Money Back">
+    <span class="text"><b>Money back</b> Return within 7 days</span>
+  </div>
+  <div class="info-item">
+    <img class="image" src="http://www.socialtalent.co/wp-content/uploads/2015/08/question-mark-512.gif"
+      alt="Questions">
+    <span class="text"><b>Any questions?</b> Experts are ready to answer</span>
+  </div>
 </div>
 <app-footer></app-footer>
-  

@@ -39,7 +39,7 @@ export class ProductAddComponent {
     sale: true,
     createdAt: new Date(),
   };
-  apiUrl = 'https://476d-39-40-97-214.ngrok-free.app/api/Product/addproduct'; // Replace with your actual API endpoint
+  apiUrl = 'http://localhost:5292/api/Product/addproduct'; // Replace with your actual API endpoint
   products: any;
   constructor(private http: HttpClient, private router: Router) {}
   addProduct() {
@@ -48,6 +48,7 @@ export class ProductAddComponent {
         console.log('Product added successfully:', response);
         // Optionally, you can reset the form or redirect the user after a successful post
         this.resetForm();
+        this.Products();
       },
       (error) => {
         console.log('Error adding product:', error);

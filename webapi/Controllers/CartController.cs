@@ -50,8 +50,24 @@ namespace webapi.Controllers
         [HttpDelete("deleteitemfromcart/{cartId}")]
         public async Task<IActionResult> DeleteItemFromCart(int cartId)
         {
-            await _cartService.DeleteItemFromCartAsync(cartId);
-            return Ok();
+            try
+            {
+                bool isDeleted = await _cartService.DeleteItemFromCartAsync(cartId);
+
+                if (isDeleted)
+                {
+                    return Ok(new { message = "Item deleted successfully from the cart." });
+                }
+                else
+                {
+                    return NotFound(new { message = "Cart item not found." });
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (logging mechanism not shown here)
+                return StatusCode(500, new { message = "An error occurred while deleting the item.", error = ex.Message });
+            }
         }
     }
 

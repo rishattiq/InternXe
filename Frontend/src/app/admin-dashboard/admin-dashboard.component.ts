@@ -1,75 +1,72 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [RouterLink,CommonModule, RouterOutlet],
+  imports: [RouterLink, CommonModule, RouterOutlet],
   templateUrl: './admin-dashboard.component.html',
-  styleUrl: './admin-dashboard.component.css'
+  styleUrl: './admin-dashboard.component.css',
 })
 export class AdminDashboardComponent {
-
   totalOrders: number = 0;
 
   totalUsers: number = 0;
-  
-  constructor(private router: Router, private http: HttpClient){
 
-  }
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit(): void {
     this.fetchOrders();
     this.fetchUsers();
   }
-  
+
   fetchOrders(): void {
-    this.http.get<any[]>('https://744a-39-40-97-214.ngrok-free.app/api/Order/getallorders').subscribe(data => {
-      // Assuming the API returns an array of orders
-      this.totalOrders = data.length; // Total number of orders
-    });
+    this.http
+      .get<any[]>('http://localhost:5292/api/Order/getallorders')
+      .subscribe((data) => {
+        // Assuming the API returns an array of orders
+        this.totalOrders = data.length; // Total number of orders
+      });
   }
 
   fetchUsers(): void {
-    this.http.get<any[]>('https://api.example.com/users').subscribe(data => {
-      // Assuming the API returns an array of users
-      this.totalUsers = data.length; // Total number of users
-    });
+    this.http
+      .get<any[]>('http://localhost:5292/api/Customer/getallcustomers')
+      .subscribe((data) => {
+        // Assuming the API returns an array of users
+        this.totalUsers = data.length; // Total number of users
+      });
   }
 
-
-
-  Admin(){
-    this.router.navigateByUrl('app-admin-dashboard')
+  Admin() {
+    this.router.navigateByUrl('app-admin-dashboard');
   }
 
-  Notifications(){
-    this.router.navigateByUrl('app-notifications')
+  Notifications() {
+    this.router.navigateByUrl('app-notifications');
   }
 
-  Products(){
-    this.router.navigateByUrl('app-admin-crud')
-  }
- 
-  Sales(){
-    this.router.navigateByUrl('app-sales')
+  Products() {
+    this.router.navigateByUrl('app-admin-crud');
   }
 
-  Users(){
-    this.router.navigateByUrl('app-customers')
+  Sales() {
+    this.router.navigateByUrl('app-sales');
   }
 
-  
+  Users() {
+    this.router.navigateByUrl('app-customers');
+  }
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
 
     if (sidebar) {
-        sidebar.classList.toggle('active');
+      sidebar.classList.toggle('active');
     }
-}
+  }
 }
 // import { Component, OnInit } from '@angular/core';
 // // Updated imports
@@ -77,7 +74,6 @@ export class AdminDashboardComponent {
 
 // import { NgxChartsModule } from '@swimlane/ngx-charts';
 // // import { NgChartsModule } from 'ng2-charts';
-
 
 // @Component({
 //   selector: 'app-dashboard',

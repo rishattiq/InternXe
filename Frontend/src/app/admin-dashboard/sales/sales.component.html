@@ -1,50 +1,53 @@
 <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
 <div class="sidebar">
-    <div class="logo">
-        <h2><b>InternXe</b></h2>
-    </div>
-    <ul>
-        <li (click)="Admin()">Dashboard</li>
-        <li (click)="Products()">Products</li>
-        <li (click)="Sales()">Sales</li>
-        <li (click)="Users()">Customers</li>
-        <li (click)="Notifications()">Complaints</li>
-    </ul>
+  <div class="logo">
+    <h2><b>InternXe</b></h2>
+  </div>
+  <ul>
+    <li (click)="Admin()">Dashboard</li>
+    <li (click)="Products()">Products</li>
+    <li (click)="Sales()">Sales</li>
+    <li (click)="Users()">Customers</li>
+    <li (click)="Notifications()">Complaints</li>
+  </ul>
 </div>
 
 <div class="space">
-    <h1 class="heading">ORDER DETAILS</h1>
-    <table class="table">
-        <thead class="header">
-            <tr>
-                <th rowspan="2">#</th>
-                <th rowspan="2">OrderId</th>
-                <th rowspan="2">Customer Name</th>
-                <th colspan="3">Product</th>
-                <th rowspan="2">Date</th>
-                <th rowspan="2">Grand total</th>
-            </tr>
-            <tr>
-                <th>Product Name</th>
-                <th>Product Price</th>
-                <th>Product Quantity</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let order of orderlist; let orderIndex = index">
-                <ng-container *ngFor="let item of order.orderItems">
-                    <tr *ngIf="item">
-                        <td class="col">{{ orderIndex + 1 }}</td>
-                        <td>{{ order.orderId }}</td>
-                        <td>{{ order.customerUsername || 'N/A' }}</td>
-                        <td>{{ item.productName }}</td>
-                        <td>{{ item.price }}</td>
-                        <td>{{ item.quantity }}</td>
-                        <td>{{ order.orderDate }}</td>
-                        <td>{{ order.grandTotal }}</td>
-                    </tr>
-                </ng-container>
-            </tr>
-        </tbody>
-    </table>
+  <h1 class="heading">ORDER DETAILS</h1>
+  <table class="table">
+    <thead class="header">
+      <tr>
+        <th rowspan="2">#</th>
+        <th rowspan="2">OrderId</th>
+        <th rowspan="2">Customer Name</th>
+        <th colspan="3">Product</th>
+        <th rowspan="2">Date</th>
+        <th rowspan="2">Grand total</th>
+      </tr>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let order of orderlist; let orderIndex = index">
+        <tr>
+          <td [attr.rowspan]="order.orderItems.length">{{ orderIndex + 1 }}</td>
+          <td [attr.rowspan]="order.orderItems.length">{{ order.orderId }}</td>
+          <td [attr.rowspan]="order.orderItems.length">{{ order.customerUsername || 'N/A' }}</td>
+          <td>{{ order.orderItems[0]?.productName }}</td>
+          <td>{{ order.orderItems[0]?.price }}</td>
+          <td>{{ order.orderItems[0]?.quantity }}</td>
+          <td [attr.rowspan]="order.orderItems.length">{{ order.orderDate | date:'short' }}</td>
+          <td [attr.rowspan]="order.orderItems.length">{{ order.grandTotal }}</td>
+        </tr>
+        <tr *ngFor="let item of order.orderItems.slice(1)">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
 </div>

@@ -1,4 +1,3 @@
-
 <body>
   <div class="invoice-container">
     <header class="invoice-header">
@@ -70,10 +69,12 @@
     <section class="invoice-notes">
       <p>Thank you for your purchase! Please make the payment by the due date.</p>
     </section>
-
+    <button class="btn btn-primary" (click)="backToProduct()">Shop More</button>
     <footer class="invoice-footer">
       <p>© 2024 InternXe. All rights reserved.</p>
     </footer>
   </div>
 </body>
 
+
+<router-outlet></router-outlet>

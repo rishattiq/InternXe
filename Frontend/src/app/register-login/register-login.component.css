@@ -1,4 +1,3 @@
-
 .s{
 	margin: 0;
   padding: 0;
@@ -8,9 +7,9 @@
   min-height: 100vh;
   font-family: 'Jost', sans-serif;
   background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-  
+
   }
-  
+
   .main{
 	  width: 350px;
 	  height: 500px;
@@ -38,7 +37,7 @@
 	  cursor: pointer;
 	  transition: .5s ease-in-out;
   }
-  
+
   input{
 	  width: 60%;
 	  height: 10px;
@@ -68,7 +67,7 @@
 	  transition: .2s ease-in;
 	  cursor: pointer;
   }
-  
+
   button:hover{
 	  background: #6d44b8;
   }
@@ -83,7 +82,7 @@
 	  color: #573b8a;
 	  transform: scale(.6);
   }
-  
+
   #chk:checked ~ .login{
 	  transform: translateY(-500px);
   }
@@ -91,6 +90,16 @@
 	  transform: scale(1);
   }
   #chk:checked ~ .signup label{
-	  transform:Â scale(.6);
+	  transform:Â scale(.6);
   }
-  
+  /* Ensure your error messages are visible */
+.error {
+	color: red;
+	font-size: 0.875em; /* Adjust size as needed */
+	margin-top: 0.25em; /* Space between the input field and error message */
+  }
+
+  /* Optional: Style the error messages with more spacing or font weight */
+  .error small {
+	display: block;
+  }

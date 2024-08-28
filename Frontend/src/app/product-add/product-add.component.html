@@ -1,69 +1,102 @@
 <div class="tw-min-h-screen tw-bg-gray-100 tw-py-6 tw-flex tw-flex-col tw-justify-center sm:tw-py-12">
-  <div class="tw-relative tw-py-3 tw-w-full tw-max-w-4xl tw-mx-auto"> <!-- Ensure container is full width and centered -->
-    <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-r tw-from-gray-300 tw-to-gray-600 tw-shadow-lg tw-transform -tw-skew-y-6 sm:tw-skew-y-0 sm:-tw-rotate-6 sm:tw-rounded-3xl"></div>
-    <div class="tw-relative tw-px-4 tw-py-10 tw-bg-white tw-shadow-lg sm:tw-rounded-3xl sm:tw-p-20 tw-w-full tw-max-w-4xl"> <!-- Ensure form is full width and centered -->
+  <div class="tw-relative tw-py-3 tw-w-full tw-max-w-4xl tw-mx-auto">
+    <!-- Ensure container is full width and centered -->
+    <div
+      class="tw-absolute tw-inset-0 tw-bg-gradient-to-r tw-from-gray-300 tw-to-gray-600 tw-shadow-lg tw-transform -tw-skew-y-6 sm:tw-skew-y-0 sm:-tw-rotate-6 sm:tw-rounded-3xl">
+    </div>
+    <div
+      class="tw-relative tw-px-4 tw-py-10 tw-bg-white tw-shadow-lg sm:tw-rounded-3xl sm:tw-p-20 tw-w-full tw-max-w-4xl">
+      <!-- Ensure form is full width and centered -->
       <h1 class="tw-text-4xl tw-font-bold" style="text-align: center; margin-bottom:15px">Add New Product</h1>
-      <form (ngSubmit)="addProduct()" class="tw-space-y-6">
+      <form class="tw-space-y-6">
         <div class="tw-space-y-4">
           <div class="tw-relative">
-            <label for="name" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Name:</label>
-            <input type="text" style="font-size: 20px; margin:15px; " id="name" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.name" name="name" required />
+            <label for="name" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Name:</label>
+            <input type="text" style="font-size: 20px; margin:15px; " id="name"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.name" name="name" required />
           </div>
           <div class="tw-relative">
-            <label for="price" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Price:</label>
-            <input type="number" style="font-size: 20px; margin:15px; " id="price" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.price" name="price" required />
+            <label for="price" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Price:</label>
+            <input type="number" style="font-size: 20px; margin:15px; " id="price"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.price" name="price" required />
           </div>
         </div>
 
         <div class="tw-space-y-4">
           <div class="tw-relative">
-            <label for="description" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Description:</label>
-            <input type="text" style="font-size: 20px; margin:15px; " id="description" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.description" name="description" required />
+            <label for="description" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Description:</label>
+            <input type="text" style="font-size: 20px; margin:15px; " id="description"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.description" name="description" required />
           </div>
           <div class="tw-relative">
-            <label for="imageUrl" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Image URL:</label>
-            <input type="text" style="font-size: 20px; margin:15px; " id="imageUrl" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.imageUrl" name="imageUrl" />
-          </div>
-        </div>
-
-        <div class="tw-space-y-4">
-          <div class="tw-relative">
-            <label for="quantity" style="font-size: 20px; margin:15px; font-weight: bold  " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Quantity:</label>
-            <input type="number" style="font-size: 20px; margin:15px;" id="quantity" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.quantity" name="quantity" required />
-          </div>
-          <div class="tw-relative">
-            <label for="rating" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Rating:</label>
-            <input type="number" style="font-size: 20px; margin:15px; " id="rating" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.rating" name="rating" required />
-          </div>
-          <div class="tw-relative">
-            <label for="category" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Category:</label>
-            <input type="text" style="font-size: 20px; margin:15px; " id="category" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.category" name="category" required />
+            <label for="imageUrl" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Image
+              URL:</label>
+            <input type="text" style="font-size: 20px; margin:15px; " id="imageUrl"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.imageUrl" name="imageUrl" />
           </div>
         </div>
 
         <div class="tw-space-y-4">
           <div class="tw-relative">
-            <label for="comments" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Comments:</label>
-            <input type="text" style="font-size: 20px; margin:15px; " id="comments" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.comments" name="comments" />
+            <label for="quantity" style="font-size: 20px; margin:15px; font-weight: bold  "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Quantity:</label>
+            <input type="number" style="font-size: 20px; margin:15px;" id="quantity"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.quantity" name="quantity" required />
           </div>
           <div class="tw-relative">
-            <label for="createdAt" style="font-size: 20px; margin:15px; font-weight: bold " class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Created At:</label>
-            <input type="date" style="font-size: 20px; margin:15px; " id="createdAt" class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600" [(ngModel)]="newProduct.createdAt" name="createdAt" required />
+            <label for="rating" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Rating:</label>
+            <input type="number" style="font-size: 20px; margin:15px; " id="rating"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.rating" name="rating" required />
+          </div>
+          <div class="tw-relative">
+            <label for="category" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Category:</label>
+            <input type="text" style="font-size: 20px; margin:15px; " id="category"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.category" name="category" required />
+          </div>
+        </div>
+
+        <div class="tw-space-y-4">
+          <div class="tw-relative">
+            <label for="comments" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Comments:</label>
+            <input type="text" style="font-size: 20px; margin:15px; " id="comments"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.comments" name="comments" />
+          </div>
+          <div class="tw-relative">
+            <label for="createdAt" style="font-size: 20px; margin:15px; font-weight: bold "
+              class="tw-absolute tw-left-0 -tw-top-3.5 tw-text-gray-600 tw-text-sm tw-peer-placeholder-shown:text-base tw-peer-placeholder-shown:text-gray-440 tw-peer-placeholder-shown:top-2 tw-transition-all tw-peer-focus:-top-3.5 tw-peer-focus:text-gray-600 tw-peer-focus:text-sm">Created
+              At:</label>
+            <input type="date" style="font-size: 20px; margin:15px; " id="createdAt"
+              class="tw-peer tw-placeholder-transparent tw-h-10 tw-w-full tw-border-b-2 tw-border-gray-300 tw-text-gray-900 tw-focus:outline-none tw-focus:border-rose-600"
+              [(ngModel)]="newProduct.createdAt" name="createdAt" required />
           </div>
           <div class="tw-relative">
             <div class="tw-flex items-center">
-              <input type="checkbox" style="width: 18px; margin-left: 15px" class="tw-mr-2" [(ngModel)]="newProduct.sale" name="sale" />
+              <input type="checkbox" style="width: 18px; margin-left: 15px" class="tw-mr-2"
+                [(ngModel)]="newProduct.sale" name="sale" />
               <label for="sale" style="font-size: 20px;  font-weight: bold " class="tw-text-gray-600">Sale</label>
             </div>
           </div>
         </div>
 
         <div class="tw-relative">
-          <button type="submit" 
-                  class="tw-bg-gray-500 tw-text-white tw-rounded-md tw-px-4 tw-py-2 
-                         hover:tw-bg-gray-600 hover:tw-shadow-lg 
-                         focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-300" 
-                  (click)="addProduct()">
+          <button type="submit" class="tw-bg-gray-500 tw-text-white tw-rounded-md tw-px-4 tw-py-2
+                         hover:tw-bg-gray-600 hover:tw-shadow-lg
+                         focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-300" (click)="addProduct()">
             Add Record
           </button>
         </div>

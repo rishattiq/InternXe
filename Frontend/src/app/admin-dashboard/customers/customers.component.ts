@@ -1,6 +1,6 @@
 import { inject, Component } from '@angular/core';
 import { APIService } from '../../service/api-service.service';
-import { RouterLink, RouterOutlet , Router} from '@angular/router';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { CommonEngine } from '@angular/ssr';
 import { CommonModule } from '@angular/common';
 
@@ -50,6 +50,7 @@ export class CustomersComponent {
       (data: any) => {
         alert('Deleted successfully');
         this.userList(); // Refresh user list after deletion
+        this.router.navigateByUrl('/app-customers');
       },
       (error: any) => {
         console.error('Error deleting user:', error);
@@ -57,33 +58,31 @@ export class CustomersComponent {
       }
     );
   }
-  Admin(){
-    this.router.navigateByUrl('app-admin-dashboard')
+  Admin() {
+    this.router.navigateByUrl('app-admin-dashboard');
   }
 
-  Notifications(){
-    this.router.navigateByUrl('app-notifications')
+  Notifications() {
+    this.router.navigateByUrl('app-notifications');
   }
 
-  Products(){
-    this.router.navigateByUrl('app-admin-crud')
-  }
- 
-  Sales(){
-    this.router.navigateByUrl('app-sales')
+  Products() {
+    this.router.navigateByUrl('app-admin-crud');
   }
 
-  Users(){
-    this.router.navigateByUrl('app-customers')
+  Sales() {
+    this.router.navigateByUrl('app-sales');
   }
 
-  
+  Users() {
+    this.router.navigateByUrl('app-customers');
+  }
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
 
     if (sidebar) {
-        sidebar.classList.toggle('active');
+      sidebar.classList.toggle('active');
     }
-}
+  }
 }
