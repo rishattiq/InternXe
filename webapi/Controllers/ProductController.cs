@@ -96,14 +96,30 @@ namespace EcommerceApp.Controllers
         }
 
         // PUT: api/product/updateproductbyid/{id}
-        [HttpPut("updateproductbyid/{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, Product product)
+        [HttpPut("updateproductdetails/{id}")]
+        public async Task<IActionResult> UpdateProductDetails(int id, [FromBody] Product product)
         {
             if (id != product.Id)
-                return BadRequest();
+                return BadRequest("Product ID mismatch.");
 
-            await _productService.UpdateProductAsync(product);
-            return Ok();
+            try
+            {
+                // Update product details via the service
+                var updatedProduct = await _productService.UpdateProductDetailsAsync(id, product);
+
+                if (updatedProduct == null)
+                    return NotFound("Product not found.");
+
+                return Ok(updatedProduct);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         // DELETE: api/product/deleteproductbyid/{id}

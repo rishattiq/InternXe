@@ -7,20 +7,27 @@ import { Injectable } from '@angular/core';
 export class APIService {
   constructor(private http: HttpClient) {}
 
-  onLogin(loginObj: any) {
-    return this.http.post(
-      'https://jsonplaceholder.typicode.com/users',
-      loginObj
-    );
-  }
- 
-  get_userList(){
-    return this.http.get("https://476d-39-40-97-214.ngrok-free.app/api/Customer/getallcustomersfree.app/api/Customer/getallcustomers")
+  // onLogin(loginObj: any) {
+  //   return this.http.post(
+  //     'https://jsonplaceholder.typicode.com/users',
+  //     loginObj
+  //   );
+  // }
+
+  // onLogin(loginObj: any) {
+  //   return this.http.post(
+  //     'http://localhost:5292/api/Customer/login',
+  //     loginObj,
+  //     { responseType: 'text' } // Assume you are getting the customerid as a text response
+  //   );
+  // }
+
+  get_userList() {
+    return this.http.get('http://localhost:5292/api/Customer/getallcustomers');
   }
 
-  
-  get_orders(){
-    return this.http.get("https://744a-39-40-97-214.ngrok-free.app/api/Order/getallorders")
+  get_orders() {
+    return this.http.get('http://localhost:5292/api/Order/getallorders');
   }
 
   createUser(obj: any) {
@@ -39,11 +46,9 @@ export class APIService {
     );
   }
 
-  get_complaints(){
-    return this.http.get("https://476d-39-40-97-214.ngrok-free.app/api/Contact/getallmessages")
+  get_complaints() {
+    return this.http.get('http://localhost:5292/api/Contact/getallmessages');
   }
-
-
 
   // edit_user(userid:any){
 

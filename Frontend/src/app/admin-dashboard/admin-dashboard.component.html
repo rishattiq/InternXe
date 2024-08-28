@@ -1,37 +1,38 @@
 <div class="page">
-    <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
-    <div class="sidebar">
-        <div class="logo">
-            <h2><b>InternXe</b></h2>
-        </div>
-        <ul>
-            <li (click)="Admin()">Dashboard</li>
-            <li (click)="Products()" >Products</li>
-            <li (click)="Sales()" >Sales</li>
-            <li (click)="Users()">Customers</li>
-            <li  (click)="Notifications()" >Complaints</li>
-            
-        </ul>
+  <div class="sidebar-toggle" (click)="toggleSidebar()">☰</div>
+  <div class="sidebar">
+    <div class="logo">
+      <h2><b>InternXe</b></h2>
+    </div>
+    <ul>
+      <li (click)="Admin()">Dashboard</li>
+      <li (click)="Products()">Products</li>
+      <li (click)="Sales()">Sales</li>
+      <li (click)="Users()">Customers</li>
+      <li (click)="Notifications()">Complaints</li>
+
+    </ul>
+  </div>
+
+  <div class="dashboard"
+    style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/a39b01197828603.Y3JvcCw1NzU0LDQ1MDEsMTI4LDA.jpg');">
+    <div class="dashboardcard">
+      <h2 style="margin-top: 40px; font-size:30px">Welcome to Admin Dashboard🎉</h2>
+      <p style="margin-top: 30px; font-size:20px">You have given the authorization to all the data-logs</p>
+      <div style="margin-top: 30px; font-size:30px" class="value">Total Sales</div>
+      <p style="font-size: 20px;">58% of sales target</p>
+      <a class="btn details" (click)="Sales()">View Details</a>
+    </div>
+    <div routerLink="/app-sales" class="card1">
+      <h2>{{ totalOrders }}</h2>
+      <p>Total Orders</p>
+    </div>
+    <div routerLink="/app-customers" class="card2">
+      <h2>{{ totalUsers }}</h2>
+      <p>Total Users</p>
     </div>
 
-    <div class="dashboard" style="background-image:url('https://mir-s3-cdn-cf.behance.net/projects/404/a39b01197828603.Y3JvcCw1NzU0LDQ1MDEsMTI4LDA.jpg');" >
-        <div class="dashboardcard">
-            <h2 style="margin-top: 40px; font-size:30px">Welcome to Admin Dashboard🎉</h2>
-            <p style="margin-top: 30px; font-size:20px">You have given the authorization to all the data-logs</p>
-            <div style="margin-top: 30px; font-size:30px" class="value">Total Sales</div>
-            <p style="font-size: 20px;">58% of sales target</p>
-            <a class="btn details" (click)="Sales()" >View Details</a>
-        </div>
-        <div class="card1">
-            <h2>{{ totalOrders }}</h2>
-            <p>Total Orders</p>
-        </div>
-        <div class="card2">
-            <h2>{{ totalUsers }}</h2>
-            <p>Total Users</p>
-        </div>
-
-    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>
 

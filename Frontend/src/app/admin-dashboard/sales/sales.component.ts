@@ -7,26 +7,20 @@ import { RouterLink, Router } from '@angular/router';
 @Component({
   selector: 'app-sales',
   standalone: true,
-  imports: [CommonModule,FormsModule,RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './sales.component.html',
   styleUrl: './sales.component.css',
 })
 export class SalesComponent {
   userservice = inject(APIService);
-  orderlist: any[] = [];
+  orderlist: Array<any> = [];
 
-  constructor(private router:Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.Orders();
   }
 
-  // Orders() {
-  //   this.userservice.get_orders().subscribe((data: any) => {
-  //     console.log(data)
-  //     this.orderlist = data;
-  //   });
-  // }
   Orders() {
     this.userservice.get_orders().subscribe({
       next: (data: any) => {
@@ -40,39 +34,35 @@ export class SalesComponent {
         } else {
           console.error('Error:', error.message);
         }
-      }
+      },
     });
   }
-  
-  
-  Admin(){
-    this.router.navigateByUrl('app-admin-dashboard')
+
+  Admin() {
+    this.router.navigateByUrl('app-admin-dashboard');
   }
 
-  Notifications(){
-    this.router.navigateByUrl('app-notifications')
+  Notifications() {
+    this.router.navigateByUrl('app-notifications');
   }
 
-  Products(){
-    this.router.navigateByUrl('app-admin-crud')
-  }
- 
-  Sales(){
-    this.router.navigateByUrl('app-sales')
+  Products() {
+    this.router.navigateByUrl('app-admin-crud');
   }
 
-  Users(){
-    this.router.navigateByUrl('app-customers')
+  Sales() {
+    this.router.navigateByUrl('app-sales');
   }
 
-  
+  Users() {
+    this.router.navigateByUrl('app-customers');
+  }
 
   toggleSidebar(): void {
     const sidebar = document.querySelector('.sidebar') as HTMLElement;
 
     if (sidebar) {
-        sidebar.classList.toggle('active');
+      sidebar.classList.toggle('active');
     }
-}
-
+  }
 }

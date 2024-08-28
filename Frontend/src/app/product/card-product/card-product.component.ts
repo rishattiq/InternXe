@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { ServiceService } from '../service.service';
+import { HttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-card-product',
@@ -16,8 +18,10 @@ export class CardProductComponent {
   // @Input() QuanFunc: any;
 
   dataForDetail: any[] = [];
+  DateTime: any;
 
   constructor(private router: Router, private productService: ServiceService) {}
+
   navigateToProductDetail(gettingDataForDetail: any) {
     // console.log(gettingDataForDetail);
     this.productService.setProduct(gettingDataForDetail);

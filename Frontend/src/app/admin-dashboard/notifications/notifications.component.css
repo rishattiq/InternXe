@@ -1,9 +1,9 @@
 
 body {
     font-family: Arial, sans-serif;
-    
+
     margin: 0;
-    
+
 }
 
 table {
@@ -16,7 +16,7 @@ table {
 th, td {
     padding: 12px 15px;
     text-align: center;
-   
+
 }
 
 td{
@@ -24,7 +24,7 @@ td{
 }
 
 th{
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     font-size: 1.4rem;
 }
 
@@ -53,13 +53,13 @@ tbody tr:nth-child(even) {
     margin: 20px;
 }
 
-.status.progress {
+.status.Completed {
     height: 40px;
     font-size: 15px;
     background-color: #5cb85c;
 }
 
-.status.open {
+.status.pending {
     height: 40px;
     font-size: 15px;
     width: 100px;

@@ -53,11 +53,47 @@ namespace webapi.Services
         }
 
         // Update Product by ID
-        public async Task UpdateProductAsync(Product product)
+        public async Task UpdateProductDetailsAsync(int id, Product updatedProduct)
         {
-            _context.Products.Update(product);
+            var existingProduct = await _context.Products.FindAsync(id);
+
+            if (existingProduct == null)
+                return null;
+
+            // Update the fields only if new values are provided
+            if (!string.IsNullOrWhiteSpace(updatedProduct.Name))
+                existingProduct.Name = updatedProduct.Name;
+
+            if (!string.IsNullOrWhiteSpace(updatedProduct.Description))
+                existingProduct.Description = updatedProduct.Description;
+
+            if (!string.IsNullOrWhiteSpace(updatedProduct.ImageUrl))
+                existingProduct.ImageUrl = updatedProduct.ImageUrl;
+
+            if (updatedProduct.Price > 0)
+                existingProduct.Price = updatedProduct.Price;
+
+            if (updatedProduct.Quantity.HasValue && updatedProduct.Quantity.Value >= 0)
+                existingProduct.Quantity = updatedProduct.Quantity.Value;
+
+            if (updatedProduct.Rating.HasValue && updatedProduct.Rating.Value >= 1 && updatedProduct.Rating.Value <= 5)
+                existingProduct.Rating = updatedProduct.Rating.Value;
+
+            if (!string.IsNullOrWhiteSpace(updatedProduct.Comments))
+                existingProduct.Comments = updatedProduct.Comments;
+
+            if (!string.IsNullOrWhiteSpace(updatedProduct.Category))
+                existingProduct.Category = updatedProduct.Category;
+
+            existingProduct.Sale = updatedProduct.Sale;
+
+            // Save changes to the database
+            _context.Products.Update(existingProduct);
             await _context.SaveChangesAsync();
+
+            return existingProduct;
         }
+
 
         // Delete Product by ID
         public async Task DeleteProductAsync(int id)

@@ -82,7 +82,7 @@ body, html {
 
 
 .dashboardcard, .card1 , .card2 {
-   
+
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 50px;
@@ -94,7 +94,8 @@ body, html {
     height: 500px;
     background: rgba(219, 215, 215, 0.8);
     color: white;
-   
+    cursor: pointer;
+
 }
 
 .dashboardcard:hover, .card1:hover, .card2:hover {
@@ -108,7 +109,6 @@ body, html {
     font-weight: bold;
     margin-top: 130px;
     font-size: 30px;
-
 }
 
 .dashboardcard h2{
@@ -121,11 +121,11 @@ body, html {
 .dashboardcard p, .card1 p , .card2 p {
 
     color: #202122;
-    
+
 }
 
 .card1 p, .card2 p {
-    
+
     font-size: 30px;
     align-items: center;
     text-align: center;
@@ -146,7 +146,7 @@ body, html {
     .sidebar {
         width: 200px;
     }
-    
+
     .dashboard {
         margin-left: 220px;
     }

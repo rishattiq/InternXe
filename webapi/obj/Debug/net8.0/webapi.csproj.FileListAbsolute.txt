@@ -285,6 +285,7 @@ C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\refint\webapi.dll
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\webapi.pdb
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\webapi.genruntimeconfig.cache
 C:\Users\PMYLS\Documents\InternXe\webapi\obj\Debug\net8.0\ref\webapi.dll
+<<<<<<< HEAD
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\bin\Debug\net8.0\appsettings.json
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\bin\Debug\net8.0\webapi.exe
@@ -429,3 +430,6 @@ C:\Users\user\OneDrive\Desktop\InternXe\webapi\obj\Debug\net8.0\refint\webapi.dl
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\obj\Debug\net8.0\webapi.pdb
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\obj\Debug\net8.0\webapi.genruntimeconfig.cache
 C:\Users\user\OneDrive\Desktop\InternXe\webapi\obj\Debug\net8.0\ref\webapi.dll
+=======
+C:\Users\PMYLS\Documents\InternXe\webapi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> master

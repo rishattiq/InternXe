@@ -71,14 +71,17 @@ namespace webapi.Services
         }
 
         // Delete item from cart
-        public async Task DeleteItemFromCartAsync(int cartId)
+        public async Task<bool> DeleteItemFromCartAsync(int cartId)
         {
             var cartItem = await _context.Carts.FindAsync(cartId);
             if (cartItem != null)
             {
                 _context.Carts.Remove(cartItem);
                 await _context.SaveChangesAsync();
+                return true; // Indicate success
             }
+
+            return false; // Indicate failure if the item is not found
         }
     }
 }
