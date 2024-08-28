@@ -17,27 +17,67 @@ public class CustomerController : ControllerBase
     }
 
     // Register API
+    // [HttpPost("register")]
+    // public async Task<IActionResult> Register([FromBody] Customer customer)
+    // {
+    //     if (!ModelState.IsValid)
+    //     {
+    //         return BadRequest(ModelState);
+    //     }
+
+    //     // Check if the username already exists
+    //     var existingCustomer = _context.Customers.SingleOrDefault(c => c.Username == customer.Username);
+    //     if (existingCustomer != null)
+    //     {
+    //         return BadRequest("Username is already taken.");
+    //     }
+
+    //     // Save the new customer
+    //     _context.Customers.Add(customer);
+    //     await _context.SaveChangesAsync();
+
+    //     return Ok("Registration successful.");
+    // }
+
+    // Register API
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] Customer customer)
     {
-        if (!ModelState.IsValid)
+        try
         {
-            return BadRequest(ModelState);
-        }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        // Check if the username already exists
-        var existingCustomer = _context.Customers.SingleOrDefault(c => c.Username == customer.Username);
-        if (existingCustomer != null)
+            // Check if the username already exists
+            var existingCustomer = _context.Customers.SingleOrDefault(c => c.Username == customer.Username);
+            if (existingCustomer != null)
+            {
+                return BadRequest("Username is already taken.");
+            }
+
+            // Password and Confirm Password Validation
+            if (customer.Password != customer.ConfirmPassword)
+            {
+                return BadRequest("Password and Confirm Password do not match.");
+            }
+
+            // Save the new customer
+            _context.Customers.Add(customer);
+            await _context.SaveChangesAsync();
+
+            return Ok("Registration successful.");
+        }
+        catch (Exception ex)
         {
-            return BadRequest("Username is already taken.");
+            // Log the exception (optional)
+            // _logger.LogError(ex, "Error during registration");
+
+            return StatusCode(500, "An error occurred during registration. Please try again later.");
         }
-
-        // Save the new customer
-        _context.Customers.Add(customer);
-        await _context.SaveChangesAsync();
-
-        return Ok("Registration successful.");
     }
+
 
     // Login API
     [HttpPost("login")]
