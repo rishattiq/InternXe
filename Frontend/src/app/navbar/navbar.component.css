@@ -1,4 +1,4 @@
-
+/* 
 .navbar {
     background-color: #dfd1d1;
     padding: 20px 30px;
@@ -82,3 +82,96 @@
     width: 130px;
     height: 70px;
 }
+ */
+
+
+ 
+.logo {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-left: 30px;
+    font-size: 50px;
+    cursor: pointer;
+   
+}
+
+.logo:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.0);
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    align-items: right;
+    gap: 80px;
+   
+}
+
+.head{
+
+    margin-top: 0px;
+    background-image: url("https://codewithsadee.github.io/anon-ecommerce-website/assets/images/banner-1.jpg");
+
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #1c1a1a;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-links li a:hover {
+    color: #3cff008d;
+}
+
+
+.imgsize1{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    align-items: right;
+    color: #080808;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-left: 200px;
+   margin-right: 100px;
+    
+}
+
+.imgsize1:hover {
+    
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+
+.imgsize2:hover {
+    
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+}
+
+
+.imgsize2{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    align-items: right;
+    color: #080808;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-right: 20px;
+}
+
+
