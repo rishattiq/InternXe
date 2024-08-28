@@ -15,14 +15,14 @@
 
     <div class="tw-flex tw-flex-wrap">
 
-      <form
+      <form (ngSubmit)="ContactForm()"
         class="tw-mb-12 tw-w-full tw-shrink-0 tw-grow-0 tw-basis-auto md:tw-px-3 lg:tw-mb-0 lg:tw-w-5/12 lg:tw-px-6">
 
                 <div class="tw-mb-3 tw-w-full">
                     <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
                             Name
                     </label>
-                    <input type="text" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md" id="exampleInput90" placeholder="Name" />
+                    <input type="text" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md" id="exampleInput90" placeholder="Name" name="name" [(ngModel)]="contact.name" />
                 </div>
 
                 <div class="tw-mb-3 tw-w-full">
@@ -30,17 +30,17 @@
                             Email
                     </label>
                     <input type="email" class="tw-px-2 tw-py-2 tw-border tw-w-full tw-outline-none tw-rounded-md" id="exampleInput90"
-                            placeholder="Enter your email address" />
+                            placeholder="Enter your email address" name="email" [(ngModel)]="contact.email" />
                 </div>
 
                 <div class="tw-mb-3 tw-w-full">
                     <label class="tw-block tw-text-2xl tw-mb-[2px] tw-text-teal-700" htmlFor="exampleInput90">
                             Message
                     </label>
-                    <textarea class="tw-px-2 tw-py-2 tw-border tw-rounded-[5px] tw-w-full tw-outline-none" name="" id=""></textarea>
+                    <textarea class="tw-px-2 tw-py-2 tw-border tw-rounded-[5px] tw-w-full tw-outline-none" name="mesage" [(ngModel)]="contact.message"></textarea>
                 </div>
 
-                <button type="button"
+                <button type="button" style="background-color: #f1000058;"
                         class="tw-mb-6 tw-inline-block tw-w-full tw-rounded tw-bg-teal-400 tw-px-6 tw-py-2.5 tw-text-1.5xl tw-uppercase tw-leading-normal tw-text-white hover:tw-shadow-md hover:tw-bg-teal-500">
                         Send
                 </button>

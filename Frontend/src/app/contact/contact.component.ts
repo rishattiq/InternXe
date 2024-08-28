@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../product/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 interface Contact {
   id: number;
@@ -12,7 +13,7 @@ interface Contact {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NavbarComponent,FooterComponent],
+  imports: [NavbarComponent,FooterComponent, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
