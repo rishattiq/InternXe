@@ -53,7 +53,7 @@ namespace webapi.Services
         }
 
         // Update Product by ID
-        public async Task UpdateProductDetailsAsync(int id, Product updatedProduct)
+        public async Task<Product?> UpdateProductDetailsAsync(int id, Product updatedProduct)
         {
             var existingProduct = await _context.Products.FindAsync(id);
 

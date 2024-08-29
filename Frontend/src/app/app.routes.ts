@@ -23,8 +23,12 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 export const routes: Routes = [
   {
     path: '',
-    component: RegisterLoginComponent,
+    component: HomeComponent,
     pathMatch: 'full',
+  },
+  {
+    path: 'register',
+    component: RegisterLoginComponent,
   },
   {
     path: 'home',
